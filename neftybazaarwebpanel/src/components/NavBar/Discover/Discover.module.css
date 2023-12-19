@@ -1,11 +1,14 @@
 .discover {
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in;
-  z-index: 2222222222;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: hsla(0, 0%, 100%, 0.53);
 }
 
 .discover:hover {
-  background-color: var(--icons-color);
-  color: var(--shadow-dark-color);
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: 0.3rem;
 }

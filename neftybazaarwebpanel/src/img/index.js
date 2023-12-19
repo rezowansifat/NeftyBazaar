@@ -41,6 +41,11 @@ import nft_image_2 from "./nft-image-2.png";
 import nft_image_3 from "./nft-image-3.png";
 import musiceWave from "./musicwave.png";
 import update from "./update.png";
+import hero_back_ico_1 from "./hero_bgi_item1.png";
+import hero_back_ico_2 from "./icons8-axie-infinity-100.png";
+import hero_back_ico_3 from "./hero_bgi_item3.png";
+import hero_back_ico_4 from "./hero_bgi_item4.png";
+import hero_back_ico_5 from "./hero_bgi_item5.png";
 
 export default {
   collection,
@@ -86,4 +91,9 @@ export default {
   vimeo,
   youtube,
   zgcmq,
+  hero_back_ico_1,
+  hero_back_ico_2,
+  hero_back_ico_3,
+  hero_back_ico_4,
+  hero_back_ico_5,
 };

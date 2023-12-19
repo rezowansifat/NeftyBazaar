@@ -33,7 +33,6 @@
 .navbar_container {
   width: 80%;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -205,11 +204,11 @@
   display: none;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+@media (max-width: 767px) {
   .navbar_container {
     grid-template-columns: 1fr 1fr;
+    width: 90%;
   }
-
   .navbar_container_left {
     grid-template-columns: 1fr;
   }
@@ -217,7 +216,10 @@
   .navbar_container_right {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  .menuIcon {
+    font-size: 2.2rem;
+    margin-left: 10px;
+  }
   .navbar_container_right_menuBtn {
     display: block;
   }
@@ -229,7 +231,7 @@
     display: none;
   }
 
-  .navbar_container_right_help {
+  .navbar_headLine {
     display: none;
   }
 
@@ -239,5 +241,14 @@
 
   .sideBar {
     display: block;
+  }
+  .navbar_container_right_notify {
+    width: 35px;
+    height: 35px;
+  }
+  .navbar_container_right_profile {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
   }
 }

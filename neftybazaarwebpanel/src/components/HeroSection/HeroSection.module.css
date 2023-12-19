@@ -1,0 +1,201 @@
+.heroSection {
+  padding-top: 91px;
+  padding-bottom: 114px;
+  position: relative;
+}
+
+.heroSection_container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 1140px;
+  max-width: 100%;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content h1 {
+  font-size: 54px;
+  font-weight: 800;
+  text-transform: capitalize;
+  line-height: 74px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.content p {
+  color: hsla(0, 0%, 100%, 0.53);
+  font-size: 14px;
+  line-height: 22px;
+  max-width: 634px;
+  margin: auto auto 50px;
+  text-align: center;
+}
+.herro_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.herro_buttons div button {
+  width: 200px;
+  height: 54px;
+}
+.herro_buttons div:nth-child(1) button {
+  background-color: var(--wt);
+  margin-right: 16px;
+  font-size: 16px;
+}
+.herro_buttons div:nth-child(1) button:hover {
+  background-color: var(--secondary-color);
+}
+
+.icon_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icon_container img {
+  position: absolute;
+  animation-duration: 8s; /* Adjust as needed */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Animate each image separately */
+.icon1 {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  animation: fadeInOut 2s linear infinite;
+}
+.icon2 {
+  position: absolute;
+  top: 90%;
+  left: 18%;
+  animation: fadeInOut 3s linear infinite;
+}
+.icon3 {
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  animation: fadeInOut 3s linear infinite;
+}
+.icon4 {
+  position: absolute;
+  opacity: 0.8;
+  top: 30%;
+  left: 6%;
+  animation: rotate 2s linear infinite;
+}
+
+.icon5 {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  animation: moveUpAndDown 3s linear infinite;
+}
+.icon6 {
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  animation: rotate 3s linear infinite;
+}
+.icon7 {
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  animation: scaleInOut 4s linear infinite;
+}
+.icon8 {
+  position: absolute;
+  top: 30%;
+  left: 95%;
+  animation: scaleInOut 3s linear infinite;
+}
+
+@keyframes scaleInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveUpAndDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes sideBySide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 81px;
+  }
+  .content h1 {
+    font-size: 48px;
+  }
+  .herro_buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .herro_buttons div {
+    width: 100%;
+  }
+  .herro_buttons div button {
+    width: 100%;
+  }
+  .herro_buttons div:nth-child(1) button {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .icon5,
+  .icon6,
+  .icon7,
+  .icon8,
+  .icon4 {
+    display: none;
+  }
+}
