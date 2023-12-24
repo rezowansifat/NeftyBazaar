@@ -4,9 +4,12 @@
   width: 100%;
   border: none;
   padding-right: 0 !important;
-  height: 57px;
+  height: 87px;
   display: block;
-  transition: all 0.5s ease;
+  transition: all 1000ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .isfixed {
@@ -21,9 +24,12 @@
   background: var(--dark-color);
   border: none;
   opacity: 1;
-  transition: all 10s ease;
+  transition: all 500ms ease;
   top: 0;
   height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .issmall {
   top: 0;

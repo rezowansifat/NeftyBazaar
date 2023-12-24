@@ -46,7 +46,7 @@ import hero_back_ico_2 from "./icons8-axie-infinity-100.png";
 import hero_back_ico_3 from "./hero_bgi_item3.png";
 import hero_back_ico_4 from "./hero_bgi_item4.png";
 import hero_back_ico_5 from "./hero_bgi_item5.png";
-
+import hero_card_img from "./banner-01.jpg";
 export default {
   collection,
   update,
@@ -96,4 +96,5 @@ export default {
   hero_back_ico_3,
   hero_back_ico_4,
   hero_back_ico_5,
+  hero_card_img,
 };

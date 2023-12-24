@@ -1,11 +1,13 @@
+import FeaturedItem from "@/components/FeaturedItems/FeaturedItem";
 import { HeroSection } from "@/components/componentsindex";
 import Link from "next/link";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <HeroSection />
-    </div>
+      <FeaturedItem />
+    </>
   );
 };
 

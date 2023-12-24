@@ -30,6 +30,23 @@ body {
   color: var(--icons-color);
 }
 
+body .swiper {
+  width: 90%;
+  /* height: 100%; */
+}
+
+body .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 315px;
+  margin: 0 20px;
+}
+
+body .swiper-slide div {
+  display: block;
+  width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;

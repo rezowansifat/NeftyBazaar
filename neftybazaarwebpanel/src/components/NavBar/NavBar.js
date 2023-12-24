@@ -23,7 +23,6 @@ const NavBar = () => {
   //----USESTATE COMPONNTS
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
-  const [openSideMenu, setOpenSideMenu] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [sideBar, setSideBar] = useState(false);
 

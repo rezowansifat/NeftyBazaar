@@ -7,6 +7,8 @@ import { TiLocationArrowOutline } from "react-icons/ti";
 //INTERNAL IMPORT
 import { Button } from "../componentsindex";
 import images from "../../img";
+import HeroSlider from "./HeroSlider/HeroSlider";
+import HeroCard from "./HeroCard/HeroCard";
 
 const HeroSection = () => {
   return (
@@ -32,6 +34,9 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* SLIIDER */}
+      <HeroSlider />
       {/* 
       ANIMATION */}
       <>

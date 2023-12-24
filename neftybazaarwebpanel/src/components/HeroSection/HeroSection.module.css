@@ -2,6 +2,11 @@
   padding-top: 91px;
   padding-bottom: 114px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .heroSection_container {

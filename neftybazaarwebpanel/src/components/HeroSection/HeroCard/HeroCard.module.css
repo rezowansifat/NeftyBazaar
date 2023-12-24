@@ -1,0 +1,132 @@
+.hero_card {
+  border-radius: 20px;
+  background: #1e1e1e;
+  padding: 12px 12px 17px;
+  /* margin-bottom: 40px; */
+  transition: all 0.2s ease;
+  box-shadow: 0 30px 70px 0 #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero_card:hover .card_media a img {
+  transform: scale(1.1);
+}
+
+.hero_card:hover .button_place {
+  bottom: 12px;
+  opacity: 1;
+}
+.card_media {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 25px;
+  overflow: hidden;
+  /* max-height: 250px; */
+}
+
+.card_media a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.card_media a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wishlist_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: hsla(0, 0%, 100%, 0.2);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.wishlist_button svg {
+  font-size: 18px;
+}
+.card_media a img {
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease;
+  height: 338px !important;
+}
+.card_info {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 100%;
+  height: 100%;
+}
+.card_info .card_name {
+  font-weight: 800;
+  /* margin-bottom: 4px; */
+  font-size: 18px;
+  /* text-rendering: optimizeLegibility; */
+  text-align: center;
+}
+
+.card_info .card_name a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.card_info .card_name a:hover {
+  color: var(--secondary-color);
+  outline: 0;
+}
+
+.card_info .card_price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_info .card_price svg {
+  font-size: 18px;
+}
+.card_info .card_price p {
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.button_place {
+  position: absolute;
+  bottom: 0;
+  height: 44px;
+  transform: translateX(-50%);
+  left: 80%;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.button_place a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  color: var(--dark-color);
+  background-color: #dee8e8;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  width: 116px;
+  height: 42px;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.button_place:hover a {
+  color: var(--dark-color);
+  background-color: var(--secondary-color);
+}
