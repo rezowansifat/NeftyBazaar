@@ -61,3 +61,12 @@
 .heading_section a:hover::after {
   width: 107%;
 }
+
+@media (max-width: 767px) {
+  .featured_cont {
+    width: 90%;
+  }
+  .heading_section h2 {
+    font-size: 22px;
+  }
+}

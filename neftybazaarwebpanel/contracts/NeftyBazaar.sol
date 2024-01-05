@@ -74,7 +74,7 @@ contract NeftyBazaar is  ERC721URIStorage{
     //Assigning Creation Data to Particular NFT
     function createMarketItem(uint256 tokenId, uint256 price) private {
         require(price > 0, "net price must be greater than 0");
-        require(msg.value > listingPrice,"net price must be greater than Listing Price" );
+        require(msg.value == listingPrice,"net price must be greater than Listing Price" );
     
         idMarketItem[tokenId] = MarketItem(
             tokenId,
@@ -177,5 +177,30 @@ contract NeftyBazaar is  ERC721URIStorage{
         }
         return items;
     }
+
+    /* Returns only items a user has listed */
+    function fetchItemsListed() public view returns (MarketItem[] memory) {
+        uint256 totalItemCount = _tokenIds;
+        uint256 itemCount = 0;
+        uint256 currentIndex = 0;
+
+        for (uint256 i = 0; i < totalItemCount; i++) {
+            if (idMarketItem[i + 1].seller == msg.sender) {
+                itemCount += 1;
+            }
+        }
+
+        MarketItem[] memory items = new MarketItem[](itemCount);
+        for (uint256 i = 0; i < totalItemCount; i++) {
+            if (idMarketItem[i + 1].seller == msg.sender) {
+                uint256 currentId = i + 1;
+                MarketItem storage currentItem = idMarketItem[currentId];
+                items[currentIndex] = currentItem;
+                currentIndex += 1;
+            }
+        }
+        return items;
+    }
+
       
 }

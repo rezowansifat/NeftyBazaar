@@ -1,20 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosCreate } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { LuArrowRightSquare } from "react-icons/lu";
-import { AiFillCloseSquare } from "react-icons/ai";
 import { VscChromeClose } from "react-icons/vsc";
 import { BsSearch } from "react-icons/bs";
-
+import { FaConnectdevelop } from "react-icons/fa";
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
 import images from "../../../img";
 import Button from "../../Button/Button";
-import { TiArrowRightOutline } from "react-icons/ti";
+
+//CONTEXT
+import NeftyBazaarContext from "../../../../Context/NeftyBazaarContext";
 
 const SideBar = ({ sidebar, closeSidebar }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -22,6 +23,9 @@ const SideBar = ({ sidebar, closeSidebar }) => {
   const toggleDropdown = () => {
     setDropdown((prevState) => !prevState);
   };
+
+  //SMART CONTRACT PART
+  const { connectWallet, currentAccount } = useContext(NeftyBazaarContext);
 
   return (
     <div className={`${Style.container} ${sidebar ? Style.toggled : ""}`}>
@@ -44,12 +48,19 @@ const SideBar = ({ sidebar, closeSidebar }) => {
             <BsSearch onClick={() => {}} className={Style.search_icon} />
           </div>
 
-          <Button
-            btnName="তৈরি করুন"
-            handleClick={() => {}}
-            icon={<IoIosCreate />}
-            className={Style.sidebar_button}
-          />
+          {currentAccount == "" ? (
+            <Button
+              btnName="কানেক্ট ওয়ালেট "
+              handleClick={() => connectWallet()}
+              icon={<FaConnectdevelop />}
+            />
+          ) : (
+            <Button
+              btnName="তৈরি করুন"
+              handleClick={(() => router.push("/createNFT"), closeSidebar)}
+              icon={<IoIosCreate />}
+            />
+          )}
         </div>
 
         <div className={Style.mobile_nav}>

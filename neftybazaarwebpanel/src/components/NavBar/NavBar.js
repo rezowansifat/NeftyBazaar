@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 //----IMPORT ICON
 import { BsSearch } from "react-icons/bs";
-import { CgMenuRight } from "react-icons/cg";
+import { FaConnectdevelop } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
-import { IoReorderThree } from "react-icons/io5";
 import { RiMenu3Line } from "react-icons/ri";
 import { RiMenu4Fill } from "react-icons/ri";
 
@@ -19,7 +19,12 @@ import { Notification, Profile, SideBar } from "./index";
 import images from "../../img/index";
 import Backdrop from "../Backdrop/Backdrop";
 
+//CONTEXT
+import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
+
 const NavBar = () => {
+  const router = useRouter();
+
   //----USESTATE COMPONNTS
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
@@ -59,6 +64,9 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  //SMART CONTRACT PART
+  const { connectWallet, currentAccount } = useContext(NeftyBazaarContext);
 
   const helpCenter = [
     {
@@ -125,7 +133,7 @@ const NavBar = () => {
             <Image
               src={images.logo}
               alt="NeftyBazaar Logo"
-              width={100}
+              width={150}
               height={100}
             />
           </div>
@@ -205,13 +213,21 @@ const NavBar = () => {
             {notification && <Notification />}
           </div>
 
-          {/* CREATE BUTTON*/}
+          {/* CREATE & CONNECT BUTTON*/}
           <div className={Style.navbar_container_right_button}>
-            <Button
-              btnName="তৈরি করুন"
-              handleClick={() => {}}
-              icon={<IoIosCreate />}
-            />
+            {currentAccount == "" ? (
+              <Button
+                btnName="কানেক্ট ওয়ালেট "
+                handleClick={() => connectWallet()}
+                icon={<FaConnectdevelop />}
+              />
+            ) : (
+              <Button
+                btnName="তৈরি করুন"
+                handleClick={() => router.push("/createNFT")}
+                icon={<IoIosCreate />}
+              />
+            )}
           </div>
 
           {/* USER PROFILE */}

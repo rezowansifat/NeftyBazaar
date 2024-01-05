@@ -15,10 +15,10 @@ module.exports = {
       },
     ],
   },
-  // defaultNetwork: "hardhat",
-  // networks: {
-  //   hardhat: {
-  //     chainId: 31337,
-  //   },
-  // },
+  defaultNetwork: "hardhat",
+  networks: {
+    hardhat: {
+      chainId: 31337,
+    },
+  },
 };

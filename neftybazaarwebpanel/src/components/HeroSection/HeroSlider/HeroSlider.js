@@ -29,49 +29,49 @@ const HeroSlider = () => {
         loop={true}
         // pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        className="hero_hwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="hero_hwiper_slide">
           <div className={Style.swiper_slide}>
             <HeroCard />
           </div>

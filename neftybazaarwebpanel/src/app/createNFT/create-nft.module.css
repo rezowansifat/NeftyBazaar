@@ -1,0 +1,91 @@
+.uploadNFT {
+  width: 100%;
+  background: #111;
+  padding-bottom: 40px;
+}
+
+.uploadNFT_box {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.uploadNFT_box_heading h1 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 44px;
+  text-transform: capitalize;
+}
+
+.widget_menu_tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0px;
+}
+
+.widget_menu_tab li {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 28px;
+  padding: 0 36px 0 38px;
+  border: 0;
+  position: relative;
+  color: var(--wt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget_menu_tab li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.widget_menu_tab li span svg {
+  color: #fff;
+  margin-left: 12px;
+}
+.widget_menu_tab li span span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  left: 0;
+  background-color: #ddf247;
+  border-radius: 50%;
+  color: #161616;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 35em) {
+  .uploadNFT_box {
+    width: 90%;
+  }
+  .uploadNFT_box_heading p {
+    width: 100%;
+  }
+
+  .uploadNFT_box_heading h1 {
+    font-size: 2rem;
+  }
+
+  .uploadNFT_box_title h2 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+  .widget_menu_tab {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .widget_menu_tab li {
+    justify-content: flex-start;
+  }
+  .widget_menu_tab li span svg {
+    display: none;
+  }
+}

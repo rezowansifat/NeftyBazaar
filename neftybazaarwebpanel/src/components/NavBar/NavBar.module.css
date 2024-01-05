@@ -1,15 +1,12 @@
 .navbar {
   position: relative;
-  z-index: 100;
+  z-index: 10000;
   width: 100%;
   border: none;
   padding-right: 0 !important;
   height: 87px;
   display: block;
   transition: all 1000ms ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .isfixed {
@@ -38,6 +35,7 @@
 
 .navbar_container {
   width: 80%;
+  height: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -50,6 +48,17 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  max-height: 100%;
+  overflow: hidden;
+}
+.logo img {
+  width: auto;
+  height: 100%;
 }
 
 .navbar_container_left_box_input_box {
@@ -82,7 +91,8 @@
   grid-template-columns: 1fr 1fr 0.5fr 1fr 0.3fr;
   gap: 1rem;
   align-items: center;
-  /* align-self: flex-end; */
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .navbar_headLine {

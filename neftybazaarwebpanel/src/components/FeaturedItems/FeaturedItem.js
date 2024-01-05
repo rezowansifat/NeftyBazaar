@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { FreeMode } from "swiper/modules";
 
 const FeaturedItem = () => {
   return (
@@ -29,48 +29,40 @@ const FeaturedItem = () => {
         {/* END OF HEADER */}
 
         <Swiper
+          freeMode={true}
+          grabCursor={true}
           slidesPerView={"auto"}
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
+          centeredSlides={true}
+          loop={true}
+          modules={[FreeMode]}
+          className="featured_swiper"
         >
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
-          <SwiperSlide>
-            {" "}
+          <SwiperSlide className="featured_swiper_slide">
             <ItemCard />
           </SwiperSlide>
         </Swiper>

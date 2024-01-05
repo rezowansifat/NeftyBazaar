@@ -7,7 +7,12 @@ import { useContext, useEffect } from "react";
 
 import NeftyBazaarContext from "../../Context/NeftyBazaarContext";
 const Home = () => {
-  //const { chkcontract } = useContext(NeftyBazaarContext);
+  const { checkIFWalletConnected, currentAccount } =
+    useContext(NeftyBazaarContext);
+
+  useEffect(() => {
+    checkIFWalletConnected();
+  }, []);
 
   return (
     <>

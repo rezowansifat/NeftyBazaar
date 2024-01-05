@@ -1,0 +1,104 @@
+.Form {
+  width: 100%;
+}
+
+.Form_box_input {
+  margin-top: 2rem;
+}
+
+.Form_box_input label {
+  display: block;
+  width: 100%;
+  /* margin-left: 1rem; */
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.Form_box_input_userName {
+  font-size: 14px;
+  margin-top: 0.5rem;
+  line-height: 22px;
+  border-radius: 12px;
+  padding: 15px 26px;
+  width: 100%;
+  background: #161616;
+  color: #8a8aa0;
+  outline: none;
+  border: none;
+}
+
+.Form_box_input::placeholder {
+  font-size: 1.2rem;
+  color: var(--icons-color);
+}
+
+.Form_box_input_box {
+  width: 100%;
+  border-radius: 1rem;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0px;
+  overflow: hidden;
+  background: #161616;
+}
+
+.Form_box_input_box_icon {
+  font-size: 2rem;
+  background-color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  color: var(--dark-color);
+  display: grid;
+  cursor: pointer;
+}
+
+.Form_box_input_box input {
+  width: 90%;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  background: #161616;
+  color: #8a8aa0;
+  outline: none;
+  border: none;
+}
+
+.Form_box_input textarea {
+  width: 100%;
+  outline: none;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #161616;
+  color: #8a8aa0;
+  outline: none;
+  border: none;
+  margin: 0.5rem 0rem;
+}
+
+.Form_box_input_social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.Form_box_btn {
+  margin: 4rem 0;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 35em) {
+  .Form_box_input_social {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .Form_box_input_social {
+    grid-template-columns: 1fr 1fr;
+  }
+}
