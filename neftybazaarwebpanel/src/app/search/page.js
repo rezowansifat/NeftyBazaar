@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useContext, useEffect, useState } from "react";
 
 //INTRNAL IMPORT
 import Style from "./searchPage.module.css";
@@ -11,25 +12,47 @@ import { Brand, Filter } from "@/components/componentsindex";
 import { SearchBar } from "@/components/Search/searchBarIndex";
 import { Banner } from "@/components/Collection/collectionIndex";
 
+//CONTEXT
+import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
+import NFTCards from "@/components/Collection/NFTCards/NFTCards";
+
 const page = () => {
-  const collectionArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-  ];
+  const { fetchNFTs } = useContext(NeftyBazaarContext);
+
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
+  useEffect(() => {
+    fetchNFTs().then((item) => {
+      setNfts(item.reverse());
+      setNftsCopy(item);
+    });
+  }, []);
+
+  const onHandleSerch = (value) => {
+    const filteredNFTS = nfts.filter(({ name }) =>
+      name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    if (filteredNFTS.length === 0) {
+      setNfts(nftsCopy);
+    } else {
+      setNfts(filteredNFTS);
+    }
+  };
+
+  const onClearSearch = () => {
+    if (nfts.length && nftsCopy.length) {
+      setNfts(nftsCopy);
+    }
+  };
+
   return (
     <div className={Style.searchPage}>
       <Banner bannerImage={images.creatorbackground2} />
-      <SearchBar />
-
+      <SearchBar onHandleSerch={onHandleSerch} onClearSearch={onClearSearch} />
       <Filter />
-      {/* <NFTCardTwo NFTData={collectionArray} /> */}
-      <ItemCard />
+      <NFTCards NFTData={nfts} />
       <FeaturedItem />
       <Brand />
     </div>

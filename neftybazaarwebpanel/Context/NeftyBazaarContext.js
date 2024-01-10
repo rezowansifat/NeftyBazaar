@@ -2,7 +2,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
-import { ethers } from "ethers";
+import { ethers, formatUnits } from "ethers";
 import { useRouter } from "next/navigation";
 import { create } from "kubo-rpc-client";
 import axios from "axios";
@@ -64,10 +64,6 @@ export const NeftyBazaarProvider = ({ children }) => {
       console.log(`Somthing went wrong whele connecting account ${error}`);
     }
   };
-
-  useEffect(() => {
-    checkIFWalletConnected();
-  }, []);
 
   //Connect Wallet On Click
   const connectWallet = async () => {
@@ -183,14 +179,12 @@ export const NeftyBazaarProvider = ({ children }) => {
               data: { image, name, description },
             } = await axios.get(tokenURI);
 
-            const price = ethers.parseUnits(
-              unformattedPrice.toString(),
-              "ether"
-            );
+            const price = formatUnits(unformattedPrice.toString(), "ether");
 
             return {
               price,
-              tokenId: tokenId.toNumber(),
+              // tokenId: tokenId.toNumber(),
+              tokenId,
               seller,
               owner,
               image,
@@ -207,6 +201,16 @@ export const NeftyBazaarProvider = ({ children }) => {
       console.log(`Error While Fteching NFTs ${error}`);
     }
   };
+
+  useEffect(() => {
+    checkIFWalletConnected();
+    fetchNFTs();
+    console.log(
+      fetchNFTs().then((item) => {
+        console.log(item);
+      })
+    );
+  }, []);
 
   //Fetching My NFts or Listed Nfts
   const fetchMyNFT = async () => {

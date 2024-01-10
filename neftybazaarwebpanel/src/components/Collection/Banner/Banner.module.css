@@ -40,7 +40,7 @@
 
 .banner_slide {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   position: absolute;
   top: -126px;
   right: -126px;

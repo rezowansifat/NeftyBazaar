@@ -4,7 +4,7 @@
 }
 
 .filter_box {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
 }
 
 .filter_box_items {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   padding: 2rem 0;
@@ -76,7 +76,6 @@
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -84,7 +83,7 @@
 
 @media screen and (min-device-width: 320px) and (max-device-width: 375px) {
   .filter_box {
-    width: 80%;
+    width: 90%;
   }
   .filter_box {
     width: 90%;
