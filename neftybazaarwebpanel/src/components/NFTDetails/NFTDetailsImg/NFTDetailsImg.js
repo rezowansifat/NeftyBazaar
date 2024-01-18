@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { BsImages } from "react-icons/bs";
@@ -6,7 +8,7 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 //INTERNAL IMPORT
 import Style from "./NFTDetailsImg.module.css";
-import images from "../../img";
+import images from "../../../img/index";
 
 const NFTDetailsImg = () => {
   const [description, setDescription] = useState(true);
@@ -73,7 +75,7 @@ const NFTDetailsImg = () => {
           className={Style.NFTDetailsImg_box_description}
           onClick={() => openDescription()}
         >
-          <p>Description</p>
+          <p className={Style.nftdetailstitle}>Description</p>
           {description ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
         </div>
 
@@ -92,7 +94,7 @@ const NFTDetailsImg = () => {
           className={Style.NFTDetailsImg_box_details}
           onClick={() => openDetails()}
         >
-          <p>Details</p>
+          <p className={Style.nftdetailstitle}>Details</p>
           {details ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
         </div>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import {
@@ -20,9 +22,10 @@ import { BiTransferAlt, BiDollar } from "react-icons/bi";
 
 //INTERNAL IMPORT
 import Style from "./NFTDescription.module.css";
-import images from "../../img";
-import { Button } from "../../components/componentsindex.js";
+import images from "../../../img/index";
+//import { Button } from "../../components/componentsindex.js";
 import { NFTTabs } from "../NFTDetailsIndex";
+import { Button } from "@/components/componentsindex";
 
 const NFTDescription = () => {
   const [social, setSocial] = useState(false);
@@ -246,16 +249,14 @@ const NFTDescription = () => {
 
             <div className={Style.NFTDescription_box_profile_biding_box_button}>
               <Button
-                icon=<FaWallet />
                 btnName="Place a bid"
+                icon={<FaWallet />}
                 handleClick={() => {}}
-                classStyle={Style.button}
               />
               <Button
-                icon=<FaPercentage />
                 btnName="Make offer"
+                icon={<FaPercentage />}
                 handleClick={() => {}}
-                classStyle={Style.button}
               />
             </div>
 
