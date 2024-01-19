@@ -27,7 +27,7 @@ import images from "../../../img/index";
 import { NFTTabs } from "../NFTDetailsIndex";
 import { Button } from "@/components/componentsindex";
 
-const NFTDescription = () => {
+const NFTDescription = ({ nft }) => {
   const [social, setSocial] = useState(false);
   const [NFTMenu, setNFTMenu] = useState(false);
   const [history, setHistory] = useState(true);
@@ -156,7 +156,9 @@ const NFTDescription = () => {
         </div>
         {/* //Part TWO */}
         <div className={Style.NFTDescription_box_profile}>
-          <h1>BearX #23453</h1>
+          <h1>
+            {nft.name} #{nft.tokenId}
+          </h1>
           <div className={Style.NFTDescription_box_profile_box}>
             <div className={Style.NFTDescription_box_profile_box_left}>
               <Image
@@ -184,9 +186,9 @@ const NFTDescription = () => {
               />
 
               <div className={Style.NFTDescription_box_profile_box_right_info}>
-                <small>Creator</small> <br />
+                <small>Collection</small> <br />
                 <span>
-                  Karli Costa <MdVerified />
+                  Monkey App <MdVerified />
                 </span>
               </div>
             </div>
@@ -240,7 +242,7 @@ const NFTDescription = () => {
               >
                 <small>Current Bid</small>
                 <p>
-                  1.000 ETH <span>( ≈ $3,221.22)</span>
+                  {nft.price} ETH <span>( ≈ $3,221.22)</span>
                 </p>
               </div>
 
