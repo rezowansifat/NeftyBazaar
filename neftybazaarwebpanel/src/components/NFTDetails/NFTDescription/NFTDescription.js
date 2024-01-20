@@ -196,7 +196,7 @@ const NFTDescription = ({ nft }) => {
 
           <div className={Style.NFTDescription_box_profile_biding}>
             <p>
-              <MdTimer /> <span>Auction ending in:</span>
+              <MdTimer /> <span>Auction Ending In</span>
             </p>
 
             <div className={Style.NFTDescription_box_profile_biding_box_timer}>

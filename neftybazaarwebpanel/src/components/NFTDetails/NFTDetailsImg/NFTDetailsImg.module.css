@@ -31,14 +31,18 @@
 }
 
 .NFTDetailsImg_box_NFT_like p {
-  background-color: var(--icons-color);
+  /* background: rgb(29, 29, 29, 0.2); */
   padding: 0.2rem 1rem;
-  color: var(--main-bg-color);
+  color: var(--wt);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 2rem;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.NFTDetailsImg_box_NFT_like svg {
+  color: var(--secondary-color);
 }
 
 .NFTDetailsImg_box_NFT_like_icon {
@@ -50,22 +54,69 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--icons-bg-color);
-  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   padding: 0.8rem;
   cursor: pointer;
   margin-top: 1rem;
+  font-size: 18px;
 }
 .nftdetailstitle {
-  color: var(--icons-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wt);
+  font-weight: 800;
+}
+.nftdetailstitle svg {
+  margin-right: 5px;
+  font-size: 18px;
 }
 .NFTDetailsImg_box_details_box,
 .NFTDetailsImg_box_description_box {
   padding: 0.1rem 1rem;
   font-size: 1rem;
+  background-color: var(--primary-color);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
+.NFTDetailsImg_box_description_box p {
+  color: hsla(0, 0%, 100%, 0.53);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  padding-top: 5px;
+}
 .NFTDetailsImg_box_details_box p {
   line-height: 1;
   font-size: 1rem;
+}
+.NFTDetailsImg_box_details_box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.NFTDetailsImg_box_details_box div {
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+.NFTDetailsImg_box_details_box div p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: var(--wt);
+}
+.NFTDetailsImg_box_details_box div span {
+  font-size: 14px;
+  color: hsla(0, 0%, 100%, 0.53);
 }

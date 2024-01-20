@@ -76,7 +76,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       setCurrentAccount(accounts[0]);
 
-      window.location.reload();
+      //window.location.reload();
     } catch (error) {
       console.log(`Somthing went wrong whele connecting wallet ${error}`);
     }

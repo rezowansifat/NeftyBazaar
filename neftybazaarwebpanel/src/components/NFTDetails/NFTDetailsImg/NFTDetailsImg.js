@@ -5,6 +5,8 @@ import Image from "next/image";
 import { BsImages } from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import { CiTextAlignLeft } from "react-icons/ci";
+import { CiViewTable } from "react-icons/ci";
 
 //INTERNAL IMPORT
 import Style from "./NFTDetailsImg.module.css";
@@ -75,7 +77,9 @@ const NFTDetailsImg = ({ nft }) => {
           className={Style.NFTDetailsImg_box_description}
           onClick={() => openDescription()}
         >
-          <p className={Style.nftdetailstitle}>Description</p>
+          <p className={Style.nftdetailstitle}>
+            <CiTextAlignLeft /> Description
+          </p>
           {description ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
         </div>
 
@@ -89,22 +93,30 @@ const NFTDetailsImg = ({ nft }) => {
           className={Style.NFTDetailsImg_box_details}
           onClick={() => openDetails()}
         >
-          <p className={Style.nftdetailstitle}>Details</p>
+          <p className={Style.nftdetailstitle}>
+            <CiViewTable /> Details
+          </p>
           {details ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
         </div>
 
         {details && (
           <div className={Style.NFTDetailsImg_box_details_box}>
-            <small>2000 x 2000 px.IMAGE(685KB)</small>
-            <p>
-              <small>Contract Address</small>
-              <br></br>
-              {nft.seller}
-            </p>
-            <p>
-              <small>Token ID</small>
-              {nft.tokenId}
-            </p>
+            <div>
+              <p>Assets Details</p>
+              <span>2000 x 2000 (685KB)</span>
+            </div>
+
+            <div>
+              <p>Contract Address</p>
+              <span>
+                {nft.seller.slice(0, 6)}...{nft.seller.slice(-4)}
+              </span>
+            </div>
+
+            <div>
+              <p>Token ID</p>
+              <span>{nft.tokenId}</span>
+            </div>
           </div>
         )}
       </div>
