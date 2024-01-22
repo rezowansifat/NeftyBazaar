@@ -1,17 +1,21 @@
+"use client";
 import React, { useState, useEffect } from "react";
 
 //INTERNAL IMPORT
-import Style from "../styles/author.module.css";
-import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
-import { Brand, Title } from "../components/componentsindex";
-import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import Style from "./author.module.css";
+import { Banner } from "@/components/Collection/collectionIndex";
+import { Brand } from "@/components/componentsindex";
+// import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
+//import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 import images from "../../img/index";
 
 import {
   AuthorProfileCard,
   AuthorTaps,
   AuthorNFTCardBox,
-} from "../authorPage/componentIndex";
+} from "@/components/AuthorPage/componentIndex";
+import Title from "@/components/Title/Title";
+import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
 const page = () => {
   const followerArray = [
@@ -50,6 +54,7 @@ const page = () => {
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground2} />
+
       <AuthorProfileCard />
       <AuthorTaps
         setCollectiables={setCollectiables}
@@ -71,6 +76,7 @@ const page = () => {
         paragraph="Click on music icon and enjoy NTF music or audio
 "
       />
+
       <div className={Style.author_box}>
         {followerArray.map((el, i) => (
           <FollowerTabCard i={i} el={el} />

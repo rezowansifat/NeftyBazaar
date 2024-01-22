@@ -16,8 +16,9 @@ import { BsThreeDots } from "react-icons/bs";
 
 //INTERNAL IMPORT
 import Style from "./AuthorProfileCard.module.css";
-import images from "../../img";
-import { Button } from "../../components/componentsindex.js";
+import images from "../../../img/index";
+import { Button } from "@/components/componentsindex";
+//import { Button } from "../../components/componentsindex.js";
 
 const AuthorProfileCard = () => {
   const [share, setShare] = useState(false);
@@ -105,6 +106,7 @@ const AuthorProfileCard = () => {
 
         <div className={Style.AuthorProfileCard_box_share}>
           <Button btnName="Follow" handleClick={() => {}} />
+
           <MdCloudUpload
             onClick={() => openShare()}
             className={Style.AuthorProfileCard_box_share_icon}
