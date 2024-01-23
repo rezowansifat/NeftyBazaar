@@ -16,6 +16,7 @@ import {
 } from "@/components/AuthorPage/componentIndex";
 import Title from "@/components/Title/Title";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import ProfileCover from "@/components/AuthorPage/ProfileCover/ProfileCover";
 
 const page = () => {
   const followerArray = [
@@ -53,8 +54,6 @@ const page = () => {
 
   return (
     <div className={Style.author}>
-      <Banner bannerImage={images.creatorbackground2} />
-
       <AuthorProfileCard />
       <AuthorTaps
         setCollectiables={setCollectiables}

@@ -1,6 +1,6 @@
 .AuthorTaps {
   width: 100%;
-  margin: 8rem 0 3rem 0;
+  margin: 4rem 0 3rem 0;
 }
 
 .AuthorTaps_box {
@@ -17,27 +17,26 @@
 }
 
 .AuthorTaps_box_left_btn button {
-  border: 1px solid var(--icons-color);
-  outline: 0;
-  background-color: var(--main-bg-color);
-  font-size: 1.2rem;
-  border-radius: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+  outline: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
   transition: all 0.3s ease-in;
-  color: var(--icons-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: var(--primary-color);
 }
 
 .AuthorTaps_box_left_btn .active {
-  border: 1px solid var(--icons-color);
-  background-color: var(--icons-color);
-  color: var(--main-bg-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
 }
 
 .AuthorTaps_box_left_btn button:hover {
-  border: 1px solid var(--icons-color);
-  background-color: var(--icons-color);
-  color: var(--main-bg-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
 }
 
 .AuthorTaps_box_right {
@@ -45,10 +44,11 @@
 }
 
 .AuthorTaps_box_right_para {
-  border: 1px solid var(--icons-color);
-  border-radius: 2rem;
-  width: 17.5rem;
-  padding: 0 2rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  color: var(--secondary-color);
+  /* width: 17.5rem; */
+  padding: 0.8rem 1.5rem;
   display: grid;
   align-items: center;
   gap: 1rem;
@@ -62,15 +62,15 @@
 }
 
 .AuthorTaps_box_right_list {
-  background-color: var(--main-bg-color);
-  padding: 1rem;
-  width: 16rem;
-  left: -3rem;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  width: 14.2rem;
+  right: 0;
   position: absolute;
-  border-radius: 1rem;
-  margin-top: 1.5rem;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
   box-shadow: var(--box-shadow);
-  z-index: 11111111111;
+  z-index: 1111111;
 }
 
 .AuthorTaps_box_right_list_item {
@@ -78,18 +78,17 @@
   align-items: center;
   justify-content: space-between;
   /* line-height: 0; */
+  cursor: pointer;
   padding-right: 1rem;
 }
 
 .AuthorTaps_box_right_list_item p {
   transition: all 0.3s ease-in;
-  padding: 0 1rem;
-  /* line-height: 1; */
-  cursor: pointer;
+  padding: 0.4rem 0.5rem;
 }
 
 .AuthorTaps_box_right_list_item:hover {
-  background-color: var(--icons-color);
+  background-color: var(--secondary-color);
   color: var(--main-bg-color);
   border-radius: 0.2rem;
 }
