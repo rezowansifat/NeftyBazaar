@@ -5,6 +5,7 @@ import { TiTick } from "react-icons/ti";
 
 //INTERNAL IMPORT
 import Style from "./FollowerTabCard.module.css";
+import { Button } from "@/components/componentsindex";
 const FollowerTabCard = ({ i, el }) => {
   const [following, setFollowing] = useState(false);
 
@@ -48,7 +49,7 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.FollowerTabCard_box_info}>
           <div className={Style.FollowerTabCard_box_info_name}>
             <h4>
-              Giada Mann{""}{" "}
+              Giada Mann
               <span>
                 <MdVerified />
               </span>
@@ -57,16 +58,11 @@ const FollowerTabCard = ({ i, el }) => {
           </div>
 
           <div className={Style.FollowerTabCard_box_info_following}>
-            {following ? (
-              <a onClick={() => followMe()}>
-                Follow{""}{" "}
-                <span>
-                  <TiTick />
-                </span>
-              </a>
-            ) : (
-              <a onClick={() => followMe()}>Following</a>
-            )}
+            <Button
+              btnName="Follow"
+              handleClick={() => followMe()}
+              icon={following ? <TiTick /> : null}
+            />
           </div>
         </div>
       </div>
@@ -75,3 +71,12 @@ const FollowerTabCard = ({ i, el }) => {
 };
 
 export default FollowerTabCard;
+
+{
+  /* <a onClick={() => followMe()}>
+                Follow
+                <span>
+                  <TiTick />
+                </span>
+              </a> */
+}
