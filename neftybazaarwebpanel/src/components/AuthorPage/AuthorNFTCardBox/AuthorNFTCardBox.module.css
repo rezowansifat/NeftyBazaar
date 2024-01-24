@@ -13,6 +13,9 @@
 }
 
 @media screen and (max-width: 35em) {
+  .AuthorNFTCardBox {
+    margin-bottom: 4rem;
+  }
   .AuthorNFTCardBox_box {
     width: 90%;
     grid-template-columns: 1fr;

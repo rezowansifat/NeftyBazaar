@@ -3,10 +3,7 @@ import React, { useState, useEffect } from "react";
 
 //INTERNAL IMPORT
 import Style from "./author.module.css";
-import { Banner } from "@/components/Collection/collectionIndex";
 import { Brand } from "@/components/componentsindex";
-// import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
-//import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 import images from "../../img/index";
 
 import {
@@ -16,7 +13,6 @@ import {
 } from "@/components/AuthorPage/componentIndex";
 import Title from "@/components/Title/Title";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
-import ProfileCover from "@/components/AuthorPage/ProfileCover/ProfileCover";
 
 const page = () => {
   const followerArray = [

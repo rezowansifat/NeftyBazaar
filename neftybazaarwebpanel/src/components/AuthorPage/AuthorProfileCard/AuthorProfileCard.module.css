@@ -184,14 +184,23 @@
 }
 
 @media screen and (max-width: 35em) {
+  .AuthorProfileCard {
+    margin-top: 0rem;
+  }
   .AuthorProfileCard_box {
     width: 90%;
     grid-template-columns: 1fr;
     padding: 0.5rem 0.5rem 1.5rem;
     gap: 1rem;
+    margin-top: -160px;
   }
   .AuthorProfileCard_box_img {
-    width: 50%;
+    width: 40%;
+  }
+  .AuthorProfileCard_box_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .AuthorProfileCard_box_info h2 {
@@ -212,9 +221,9 @@
   }
 
   .AuthorProfileCard_box_share {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    padding: 1rem;
+    /* grid-column: 1 / -1;
+    grid-row: 1 / -1; */
+    padding: 1rem 0rem;
     gap: 1rem;
   }
 
@@ -227,13 +236,26 @@
   }
 
   .AuthorProfileCard_box_share_report {
-    left: 9rem;
+    left: 10rem;
+    top: 5rem;
+  }
+
+  .AuthorProfileCard_box_info,
+  .AuthorProfileCard_box_share {
+    margin-top: 0rem;
   }
 }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .AuthorProfileCard_box {
     grid-template-columns: 1fr 2fr;
-    gap: 1rem;
+  }
+
+  .AuthorProfileCard_box_share {
+    margin-top: 0rem;
+  }
+
+  .AuthorProfileCard_box_info {
+    margin-left: -80px;
   }
 }
