@@ -1,7 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+//Context
+import { NeftyBazaarContext } from "../../../../Context/NeftyBazaarContext";
+
 import {
   MdVerified,
   MdCloudUpload,
@@ -23,6 +28,7 @@ import { BiTransferAlt, BiDollar } from "react-icons/bi";
 //INTERNAL IMPORT
 import Style from "./NFTDescription.module.css";
 import images from "../../../img/index";
+
 //import { Button } from "../../components/componentsindex.js";
 import { NFTTabs } from "../NFTDetailsIndex";
 import { Button } from "@/components/componentsindex";
@@ -99,6 +105,10 @@ const NFTDescription = ({ nft }) => {
     }
   };
 
+  //SMART CONTRACT DATA
+
+  const { buyNFT, currentAccount } = useContext(NeftyBazaarContext);
+
   return (
     <div className={Style.NFTDescription}>
       <div className={Style.NFTDescription_box}>
@@ -159,40 +169,44 @@ const NFTDescription = ({ nft }) => {
           <h1>
             {nft.name} #{nft.tokenId}
           </h1>
-          <div className={Style.NFTDescription_box_profile_box}>
-            <div className={Style.NFTDescription_box_profile_box_left}>
-              <Image
-                src={images.user1}
-                alt="profile"
-                width={40}
-                height={40}
-                className={Style.NFTDescription_box_profile_box_left_img}
-              />
-              <div className={Style.NFTDescription_box_profile_box_left_info}>
-                <small>Creator</small> <br />
-                <span>
-                  Karli Costa <MdVerified />
-                </span>
+          <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
+            <div className={Style.NFTDescription_box_profile_box}>
+              <div className={Style.NFTDescription_box_profile_box_left}>
+                <Image
+                  src={images.user1}
+                  alt="profile"
+                  width={40}
+                  height={40}
+                  className={Style.NFTDescription_box_profile_box_left_img}
+                />
+                <div className={Style.NFTDescription_box_profile_box_left_info}>
+                  <small>Creator</small> <br />
+                  <span>
+                    Karli Costa <MdVerified />
+                  </span>
+                </div>
+              </div>
+
+              <div className={Style.NFTDescription_box_profile_box_right}>
+                <Image
+                  src={images.user2}
+                  alt="profile"
+                  width={40}
+                  height={40}
+                  className={Style.NFTDescription_box_profile_box_left_img}
+                />
+
+                <div
+                  className={Style.NFTDescription_box_profile_box_right_info}
+                >
+                  <small>Collection</small> <br />
+                  <span>
+                    Monkey App <MdVerified />
+                  </span>
+                </div>
               </div>
             </div>
-
-            <div className={Style.NFTDescription_box_profile_box_right}>
-              <Image
-                src={images.user2}
-                alt="profile"
-                width={40}
-                height={40}
-                className={Style.NFTDescription_box_profile_box_left_img}
-              />
-
-              <div className={Style.NFTDescription_box_profile_box_right_info}>
-                <small>Collection</small> <br />
-                <span>
-                  Monkey App <MdVerified />
-                </span>
-              </div>
-            </div>
-          </div>
+          </Link>
 
           <div className={Style.NFTDescription_box_profile_biding}>
             <p>
@@ -250,16 +264,23 @@ const NFTDescription = ({ nft }) => {
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_button}>
-              <Button
-                btnName="Place a bid"
-                icon={<FaWallet />}
-                handleClick={() => {}}
-              />
-              <Button
-                btnName="Make offer"
-                icon={<FaPercentage />}
-                handleClick={() => {}}
-              />
+              {currentAccount == nft.seller.toLowerCase() ? (
+                <p>You can't buy your own nft</p>
+              ) : currentAccount == nft.owner.toLowerCase() ? (
+                <Button
+                  btnName="Place a bid"
+                  icon={<FaWallet />}
+                  handleClick={() => {}}
+                />
+              ) : (
+                <Button
+                  btnName="NFt কিনুন "
+                  icon={<FaPercentage />}
+                  handleClick={() => {
+                    buyNFT(nft);
+                  }}
+                />
+              )}
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_tabs}>

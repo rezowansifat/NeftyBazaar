@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Style from "./AuthorNFTCardBox.module.css";
 import images from "../../../img";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import ItemCard from "@/components/ItemCard/ItemCard";
+import Link from "next/link";
 // import { NFTCardTwo } from "../../collectionPage/collectionIndex";
 // import FollowerTabCard from "../../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
@@ -13,6 +15,8 @@ const AuthorNFTCardBox = ({
   like,
   follower,
   following,
+  nfts,
+  myNFTs,
 }) => {
   const collectiablesArray = [
     images.nft_image_1,
@@ -89,8 +93,20 @@ const AuthorNFTCardBox = ({
       user: images.user1,
     },
   ];
+  console.log(nfts);
+  console.log(myNFTs);
   return (
     <div className={Style.AuthorNFTCardBox}>
+      {collectiables && (
+        <div className={Style.NFTCardTwo}>
+          {myNFTs.map((data, i) => (
+            <Link href={{ pathname: "/details", query: data }} key={i}>
+              <ItemCard cardData={data} />
+            </Link>
+          ))}
+        </div>
+      )}
+
       {follower && (
         <div className={Style.AuthorNFTCardBox_box}>
           {followerArray.map((el, i) => (

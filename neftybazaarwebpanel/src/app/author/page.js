@@ -1,10 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 //INTERNAL IMPORT
 import Style from "./author.module.css";
 import { Brand } from "@/components/componentsindex";
 import images from "../../img/index";
+
+//Context
+import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
 
 import {
   AuthorProfileCard,
@@ -15,6 +18,9 @@ import Title from "@/components/Title/Title";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
 const page = () => {
+  //SMART CONTRACT DATA
+  const { fetchMyNFT, currentAccount } = useContext(NeftyBazaarContext);
+
   const followerArray = [
     {
       background: images.creatorbackground1,
@@ -47,6 +53,22 @@ const page = () => {
   const [like, setLike] = useState(false);
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
+  const [nfts, setNfts] = useState([]);
+  const [myNFTs, setMyNFTs] = useState([]);
+
+  useEffect(() => {
+    fetchMyNFT("fetchItemsListed").then((item) => {
+      setNfts(item);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchMyNFT("fetchmynfts").then((item) => {
+      setMyNFTs(item);
+    });
+  }, []);
+
+  console.log(nfts);
 
   return (
     <div className={Style.author}>
@@ -65,6 +87,8 @@ const page = () => {
         like={like}
         follower={follower}
         following={following}
+        nfts={nfts}
+        myNFTs={myNFTs}
       />
       <Title
         heading="Popular Creators"

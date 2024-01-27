@@ -183,8 +183,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
             return {
               price,
-              // tokenId: tokenId.toNumber(),
-              tokenId,
+              tokenId: parseInt(tokenId),
               seller,
               owner,
               image,
@@ -213,12 +212,9 @@ export const NeftyBazaarProvider = ({ children }) => {
   }, []);
 
   //Fetching My NFts or Listed Nfts
-  const fetchMyNFT = async () => {
+  const fetchMyNFT = async (type) => {
     try {
       const contract = await connectingWithContract();
-
-      //fetchItemsListed
-      //fetchMyNFTs
 
       const data =
         type == "fetchItemsListed"
@@ -241,7 +237,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
             return {
               price,
-              tokenId: tokenId.toNumber(),
+              tokenId: parseInt(tokenId),
               seller,
               owner,
               image,
@@ -262,6 +258,7 @@ export const NeftyBazaarProvider = ({ children }) => {
   //Buy NFts
   const buyNFT = async (nft) => {
     try {
+      console.log(nft);
       const contract = await connectingWithContract();
 
       const price = ethers.parseUnits(nft.price.toString(), "ether");
@@ -271,6 +268,8 @@ export const NeftyBazaarProvider = ({ children }) => {
       });
 
       await transection.wait();
+
+      router.push("/author");
     } catch (error) {
       console.log(`Error While Buying NFT ${error}`);
     }
