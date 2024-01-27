@@ -20,9 +20,7 @@
   --blk: #000;
   --blk2: #111;
   --wt: #fff;
-
   --box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
-
   --box-shadow-2: 0rem 0rem 0rem var(--shadow-dark-color),
     -0.3rem -0.3rem 1rem var(--shadow-dark-color);
 }
