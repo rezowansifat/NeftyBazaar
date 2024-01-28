@@ -23,9 +23,9 @@ const page = () => {
   const [nftsCopy, setNftsCopy] = useState([]);
 
   useEffect(() => {
-    fetchNFTs().then((item) => {
-      setNfts(item.reverse());
-      setNftsCopy(item);
+    fetchNFTs().then((items) => {
+      setNfts(items.reverse());
+      setNftsCopy(items);
     });
   }, []);
 

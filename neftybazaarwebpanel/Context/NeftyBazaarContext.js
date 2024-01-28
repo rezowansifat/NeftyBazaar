@@ -168,7 +168,7 @@ export const NeftyBazaarProvider = ({ children }) => {
     try {
       const provider = new ethers.JsonRpcProvider();
       const contract = neftyBazaarFetchContract(provider);
-      const data = await contract.fetchMarketItem();
+      const data = await contract.fetchMarketItems();
 
       const items = await Promise.all(
         data.map(
@@ -230,10 +230,7 @@ export const NeftyBazaarProvider = ({ children }) => {
               data: { image, name, description },
             } = await axios.get(tokenURI);
 
-            const price = ethers.parseUnits(
-              unformattedPrice.toString(),
-              "ether"
-            );
+            const price = formatUnits(unformattedPrice.toString(), "ether");
 
             return {
               price,

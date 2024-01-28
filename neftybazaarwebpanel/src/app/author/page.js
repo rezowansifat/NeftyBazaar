@@ -68,8 +68,6 @@ const page = () => {
     });
   }, []);
 
-  console.log(nfts);
-
   return (
     <div className={Style.author}>
       <AuthorProfileCard currentAccount={currentAccount} />
@@ -90,6 +88,7 @@ const page = () => {
         nfts={nfts}
         myNFTs={myNFTs}
       />
+
       <Title
         heading="Popular Creators"
         paragraph="Click on music icon and enjoy NTF music or audio
