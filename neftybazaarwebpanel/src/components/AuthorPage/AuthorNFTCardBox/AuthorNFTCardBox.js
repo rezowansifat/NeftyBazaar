@@ -18,24 +18,6 @@ const AuthorNFTCardBox = ({
   nfts,
   myNFTs,
 }) => {
-  const collectiablesArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-  ];
-
-  const createdArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-  ];
-
   const likeArray = [
     images.nft_image_1,
     images.nft_image_2,
@@ -93,11 +75,21 @@ const AuthorNFTCardBox = ({
       user: images.user1,
     },
   ];
-  console.log(nfts);
-  console.log(myNFTs);
+  // console.log(nfts);
+  // console.log(myNFTs);
   return (
     <div className={Style.AuthorNFTCardBox}>
-      {collectiables && (
+      {collectiables && nfts && (
+        <div className={Style.NFTCardTwo}>
+          {nfts.map((data, i) => (
+            <Link href={{ pathname: "/details", query: data }} key={i}>
+              <ItemCard cardData={data} />
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {created && myNFTs && (
         <div className={Style.NFTCardTwo}>
           {myNFTs.map((data, i) => (
             <Link href={{ pathname: "/details", query: data }} key={i}>

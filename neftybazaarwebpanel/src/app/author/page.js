@@ -72,7 +72,7 @@ const page = () => {
 
   return (
     <div className={Style.author}>
-      <AuthorProfileCard />
+      <AuthorProfileCard currentAccount={currentAccount} />
       <AuthorTaps
         setCollectiables={setCollectiables}
         setCreated={setCreated}

@@ -80,6 +80,7 @@ contract NeftyBazaar is ERC721URIStorage {
 
         idMarketItem[tokenId].owner = payable(msg.sender);
         idMarketItem[tokenId].sold = true;
+        idMarketItem[tokenId].owner = payable(address(0));
 
         _itemsSold++;
 
