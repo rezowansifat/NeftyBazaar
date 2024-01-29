@@ -143,8 +143,8 @@ export const NeftyBazaarProvider = ({ children }) => {
   //Create Sale
   const createSale = async (url, fromInputPrice, isReselling, id) => {
     try {
-      // const price = ethers.parseUnits(fromInputPrice, "ether");
-      const price = formatUnits(fromInputPrice.toString(), "ether");
+      const price = ethers.parseUnits(fromInputPrice, "ether");
+      // const price = formatUnits(fromInputPrice.toString(), "ether");
       const contract = await connectingWithContract();
 
       const listingPrice = await contract.getListingPrice();

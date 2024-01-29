@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import { TiArrowSortedDown, TiArrowSortedUp, TiTick } from "react-icons/ti";
 
 //INTERNAL IMPORT

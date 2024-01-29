@@ -6,7 +6,6 @@
 .AuthorNFTCardBox_box {
   width: 80%;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -30,8 +29,10 @@
     grid-template-columns: 1fr;
   }
   .NFTCardTwo {
-    width: 90%;
-    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -41,7 +42,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .NFTCardTwo {
-    width: 90%;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
