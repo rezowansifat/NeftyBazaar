@@ -27,7 +27,6 @@ const page = () => {
     try {
       const response = await axios.get(tokenURI);
       const data = response.data;
-      setPrice(data.price);
       setImage(data.image);
     } catch (error) {
       console.error("Error fetching NFT:", error);
@@ -39,8 +38,12 @@ const page = () => {
   }, [id]);
 
   const resell = async () => {
-    await createSale(tokenURI, price, true, id);
-    router.push("author");
+    try {
+      await createSale(tokenURI, price, true, id);
+      router.push("/author");
+    } catch (error) {
+      console.error("Error While Resell:", error);
+    }
   };
 
   console.log(image);
@@ -56,6 +59,7 @@ const page = () => {
             min={0}
             placeholder="Resell Price"
             className={FormStyle.Form_box_input_userName}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
         <div className={Style.reSell_Box_Image}>
