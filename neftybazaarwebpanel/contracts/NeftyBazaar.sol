@@ -74,6 +74,24 @@ contract NeftyBazaar is ERC721URIStorage {
         emit idMarketItemCreated(tokenId, payable(msg.sender), payable(address(this)), price, false);
     }
 
+    function resellToken(uint256 tokenId, uint256 price) public payable {
+        require(
+            idMarketItem[tokenId].owner == msg.sender,
+            "Only item owner can perform this operation"
+        );
+        require(
+            msg.value == listingPrice,
+            "Price must be equal to listing price"
+        );
+        idMarketItem[tokenId].sold = false;
+        idMarketItem[tokenId].price = price;
+        idMarketItem[tokenId].seller = payable(msg.sender);
+        idMarketItem[tokenId].owner = payable(address(this));
+       _itemsSold--;
+
+        _transfer(msg.sender, address(this), tokenId);
+    }
+
     function createMarketSale(uint256 tokenId) public payable {
         uint256 price = idMarketItem[tokenId].price;
         require(msg.value == price, "Please submit the asking price in order to complete the purchase");

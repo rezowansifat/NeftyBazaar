@@ -1,0 +1,11 @@
+.reSellNFT {
+  width: 100%;
+}
+.reSellNFT_BOX {
+  width: 80%;
+  min-height: 60vh;
+  margin: 0 auto;
+}
+.reSell_Box_Image {
+  margin-block: 4rem;
+}

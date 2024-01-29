@@ -32,8 +32,11 @@ import images from "../../../img/index";
 //import { Button } from "../../components/componentsindex.js";
 import { NFTTabs } from "../NFTDetailsIndex";
 import { Button } from "@/components/componentsindex";
+import { useRouter } from "next/navigation";
 
 const NFTDescription = ({ nft }) => {
+  const router = useRouter();
+
   const [social, setSocial] = useState(false);
   const [NFTMenu, setNFTMenu] = useState(false);
   const [history, setHistory] = useState(true);
@@ -106,7 +109,6 @@ const NFTDescription = ({ nft }) => {
   };
 
   //SMART CONTRACT DATA
-
   const { buyNFT, currentAccount } = useContext(NeftyBazaarContext);
 
   return (
@@ -268,17 +270,19 @@ const NFTDescription = ({ nft }) => {
                 <p>You can't buy your own nft</p>
               ) : currentAccount == nft.owner.toLowerCase() ? (
                 <Button
-                  btnName="Place a bid"
+                  btnName="Resell NFT"
                   icon={<FaWallet />}
-                  handleClick={() => {}}
+                  handleClick={() =>
+                    router.push(
+                      `/resell?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                    )
+                  }
                 />
               ) : (
                 <Button
                   btnName="NFt কিনুন "
                   icon={<FaPercentage />}
-                  handleClick={() => {
-                    buyNFT(nft);
-                  }}
+                  handleClick={() => buyNFT(nft)}
                 />
               )}
             </div>

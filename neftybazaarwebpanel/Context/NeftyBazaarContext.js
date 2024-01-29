@@ -134,7 +134,7 @@ export const NeftyBazaarProvider = ({ children }) => {
       console.log(url);
 
       await createSale(url, price);
-      //router.push("/");
+      // router.push("/search");
     } catch (error) {
       console.log(`Error While Create Nft ${error}`);
     }
@@ -143,7 +143,8 @@ export const NeftyBazaarProvider = ({ children }) => {
   //Create Sale
   const createSale = async (url, fromInputPrice, isReselling, id) => {
     try {
-      const price = ethers.parseUnits(fromInputPrice, "ether");
+      // const price = ethers.parseUnits(fromInputPrice, "ether");
+      const price = formatUnits(fromInputPrice.toString(), "ether");
       const contract = await connectingWithContract();
 
       const listingPrice = await contract.getListingPrice();
@@ -152,7 +153,7 @@ export const NeftyBazaarProvider = ({ children }) => {
         ? await contract.createToken(url, price, {
             value: listingPrice.toString(),
           })
-        : await contract.reSaleToken(url, price, {
+        : await contract.resellToken(id, price, {
             value: listingPrice.toString(),
           });
 
