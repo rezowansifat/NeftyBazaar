@@ -21,6 +21,7 @@ import Backdrop from "../Backdrop/Backdrop";
 
 //CONTEXT
 import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
+import TransparentClose from "../Backdrop/TransparentClose";
 
 const NavBar = () => {
   const router = useRouter();
@@ -242,7 +243,12 @@ const NavBar = () => {
                 className={Style.navbar_container_right_profile}
               />
 
-              {profile && <Profile />}
+              {profile && (
+                <>
+                  <Profile />
+                  <TransparentClose value={profile} action={openProfile} />
+                </>
+              )}
             </div>
           </div>
           {/* MENU BUTTON */}

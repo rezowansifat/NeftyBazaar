@@ -4,7 +4,6 @@ import React, { useContext, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
 import { ethers, formatUnits } from "ethers";
 import { useRouter } from "next/navigation";
-import { create } from "kubo-rpc-client";
 import axios from "axios";
 
 //INTERNAL IMPORT
