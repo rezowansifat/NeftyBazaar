@@ -33,6 +33,7 @@ import images from "../../../img/index";
 import { NFTTabs } from "../NFTDetailsIndex";
 import { Button } from "@/components/componentsindex";
 import { useRouter } from "next/navigation";
+import TransparentClose from "@/components/Backdrop/TransparentClose";
 
 const NFTDescription = ({ nft }) => {
   const router = useRouter();
@@ -124,23 +125,26 @@ const NFTDescription = ({ nft }) => {
             />
 
             {social && (
-              <div className={Style.NFTDescription_box_share_box_social}>
-                <a href="#">
-                  <TiSocialFacebook /> Facebooke
-                </a>
-                <a href="#">
-                  <TiSocialInstagram /> Instragram
-                </a>
-                <a href="#">
-                  <TiSocialLinkedin /> LinkedIn
-                </a>
-                <a href="#">
-                  <TiSocialTwitter /> Twitter
-                </a>
-                <a href="#">
-                  <TiSocialYoutube /> YouTube
-                </a>
-              </div>
+              <>
+                <div className={Style.NFTDescription_box_share_box_social}>
+                  <a href="#">
+                    <TiSocialFacebook /> Facebooke
+                  </a>
+                  <a href="#">
+                    <TiSocialInstagram /> Instragram
+                  </a>
+                  <a href="#">
+                    <TiSocialLinkedin /> LinkedIn
+                  </a>
+                  <a href="#">
+                    <TiSocialTwitter /> Twitter
+                  </a>
+                  <a href="#">
+                    <TiSocialYoutube /> YouTube
+                  </a>
+                </div>
+                <TransparentClose value={social} action={openSocial} />
+              </>
             )}
 
             <BsThreeDots
@@ -149,20 +153,23 @@ const NFTDescription = ({ nft }) => {
             />
 
             {NFTMenu && (
-              <div className={Style.NFTDescription_box_share_box_social}>
-                <a href="#">
-                  <BiDollar /> Change price
-                </a>
-                <a href="#">
-                  <BiTransferAlt /> Transfer
-                </a>
-                <a href="#">
-                  <MdReportProblem /> Report abouse
-                </a>
-                <a href="#">
-                  <MdOutlineDeleteSweep /> Delete item
-                </a>
-              </div>
+              <>
+                <div className={Style.NFTDescription_box_share_box_social}>
+                  <a href="#">
+                    <BiDollar /> Change price
+                  </a>
+                  <a href="#">
+                    <BiTransferAlt /> Transfer
+                  </a>
+                  <a href="#">
+                    <MdReportProblem /> Report abouse
+                  </a>
+                  <a href="#">
+                    <MdOutlineDeleteSweep /> Delete item
+                  </a>
+                </div>
+                <TransparentClose value={NFTMenu} action={openNFTMenu} />
+              </>
             )}
           </div>
         </div>

@@ -28,6 +28,7 @@
   box-shadow: var(--box-shadow);
   border-radius: 8px;
   padding: 1rem;
+  z-index: 999999;
 }
 
 .NFTDescription_box_share_box_social a {

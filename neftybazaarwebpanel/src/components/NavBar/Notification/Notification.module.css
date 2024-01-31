@@ -4,40 +4,58 @@
   box-shadow: var(--box-shadow);
   font-size: 1rem;
   width: 25rem;
-  border-radius: 1rem;
-
+  border-radius: 12px;
   left: -20rem;
   top: 3.5rem;
-  z-index: 2222222222;
-  background-color: var(--main-bg-color);
+  z-index: 99999;
+  background-color: var(--primary-color);
 }
 
 .notification > p {
   font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .notification_box {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   padding: 1rem;
   transition: all 0.3s ease-in;
+  background-color: var(--dark-color);
+  border-radius: 12px;
 }
 
 .notification_box:hover {
-  background-color: var(--icons-color);
-  color: var(--shadow-dark-color);
+  background-color: var(--secondary-color);
+  color: var(--main-bg-color);
   border-radius: 0.3rem;
+}
+
+.notification_box:hover .notification_box_new {
+  background-color: var(--main-bg-color);
+}
+
+.notification_box:hover .notification_box_info small {
+  color: var(--main-bg-color);
 }
 
 .notification_box_img {
   border-radius: 5rem;
 }
 
+.notification_box_info p {
+  margin-top: 3px;
+}
+
+.notification_box_info small {
+  margin-top: 5px;
+  color: hsla(0, 0%, 100%, 0.53);
+  transition: all 0.3s ease-in;
+}
 .notification_box_info {
-  line-height: 0;
   margin-top: -0.8rem;
 }
 
@@ -46,8 +64,7 @@
 }
 
 .notification_box_info p {
-  font-size: 15px;
-  line-height: 0.3;
+  font-size: 16px;
   position: relative;
 }
 
@@ -55,7 +72,8 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: aqua;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease-in;
 }
 
 @media screen and (max-width: 35em) {

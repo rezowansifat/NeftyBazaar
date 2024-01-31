@@ -211,7 +211,15 @@ const NavBar = () => {
                 strokeWidth="1.5"
               ></circle>
             </svg>
-            {notification && <Notification />}
+            {notification && (
+              <>
+                <Notification />
+                <TransparentClose
+                  value={notification}
+                  action={openNotification}
+                />
+              </>
+            )}
           </div>
 
           {/* CREATE & CONNECT BUTTON*/}
@@ -245,7 +253,10 @@ const NavBar = () => {
 
               {profile && (
                 <>
-                  <Profile />
+                  <Profile
+                    currentAccount={currentAccount}
+                    openProfile={openProfile}
+                  />
                   <TransparentClose value={profile} action={openProfile} />
                 </>
               )}
