@@ -46,8 +46,6 @@ const page = () => {
     }
   };
 
-  console.log(image);
-  console.log(price);
   return (
     <div className={Style.reSellNFT}>
       <div className={Style.reSellNFT_BOX}>

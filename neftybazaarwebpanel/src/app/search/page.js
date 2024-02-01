@@ -7,7 +7,6 @@ import Style from "./searchPage.module.css";
 // import { NFTCardTwo, Banner } from "../../components/Collection";
 import images from "../../img/index";
 import FeaturedItem from "@/components/FeaturedItems/FeaturedItem";
-import ItemCard from "@/components/ItemCard/ItemCard";
 import { Brand, Filter } from "@/components/componentsindex";
 import { SearchBar } from "@/components/Search/searchBarIndex";
 import { Banner } from "@/components/Collection/collectionIndex";
