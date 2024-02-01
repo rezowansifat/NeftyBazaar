@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useContext, useEffect } from "react";
 
 import NeftyBazaarContext from "../../Context/NeftyBazaarContext";
+import Loader from "@/components/Loader/Loader";
 const Home = () => {
   const { checkIFWalletConnected, currentAccount } =
     useContext(NeftyBazaarContext);
@@ -18,6 +19,7 @@ const Home = () => {
     <>
       <HeroSection />
       <FeaturedItem />
+      <Loader />
     </>
   );
 };

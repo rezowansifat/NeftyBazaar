@@ -10,13 +10,19 @@
 @media screen and (max-width: 35em) {
   .NFTCardTwo {
     width: 90%;
-    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .NFTCardTwo {
     width: 90%;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }

@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaEthereum } from "react-icons/fa6";
 
 import Style from "./ItemCard.module.css";
+import Loader from "../Loader/Loader";
 
 const ItemCard = ({ cardData }) => {
   return (
@@ -60,7 +61,7 @@ const ItemCard = ({ cardData }) => {
           </div>
         </div>
       ) : (
-        <p>loading</p>
+        <Loader />
       )}
     </>
   );

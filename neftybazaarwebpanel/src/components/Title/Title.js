@@ -1,5 +1,3 @@
-import React from "react";
-
 //INTERNAL IMPORT
 import Style from "./Title.module.css";
 

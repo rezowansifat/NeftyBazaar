@@ -6,6 +6,7 @@ import images from "../../../img";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
 import ItemCard from "@/components/ItemCard/ItemCard";
 import Link from "next/link";
+import Loader from "@/components/Loader/Loader";
 // import { NFTCardTwo } from "../../collectionPage/collectionIndex";
 // import FollowerTabCard from "../../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
@@ -79,25 +80,41 @@ const AuthorNFTCardBox = ({
   // console.log(myNFTs);
   return (
     <div className={Style.AuthorNFTCardBox}>
-      {collectiables && nfts && (
-        <div className={Style.NFTCardTwo}>
-          {nfts.map((data, i) => (
-            <Link href={{ pathname: "/details", query: data }} key={i}>
-              <ItemCard cardData={data} />
-            </Link>
-          ))}
-        </div>
-      )}
+      <>
+        {nfts.length == 0 ? (
+          <Loader />
+        ) : (
+          <>
+            {collectiables && (
+              <div className={Style.NFTCardTwo}>
+                {nfts.map((data, i) => (
+                  <Link href={{ pathname: "/details", query: data }} key={i}>
+                    <ItemCard cardData={data} />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </>
 
-      {created && myNFTs && (
-        <div className={Style.NFTCardTwo}>
-          {myNFTs.map((data, i) => (
-            <Link href={{ pathname: "/details", query: data }} key={i}>
-              <ItemCard cardData={data} />
-            </Link>
-          ))}
-        </div>
-      )}
+      <>
+        {myNFTs.length == 0 ? (
+          <Loader />
+        ) : (
+          <>
+            {created && (
+              <div className={Style.NFTCardTwo}>
+                {myNFTs.map((data, i) => (
+                  <Link href={{ pathname: "/details", query: data }} key={i}>
+                    <ItemCard cardData={data} />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </>
 
       {follower && (
         <div className={Style.AuthorNFTCardBox_box}>
