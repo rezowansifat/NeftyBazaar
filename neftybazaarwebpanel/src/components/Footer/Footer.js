@@ -13,7 +13,14 @@ const Footer = () => {
     <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={images.logo} alt="footer logo" height={100} width={150} />
+          <div className={Style.logo}>
+            <Image
+              src={images.neftybazar}
+              alt="footer logo"
+              height={100}
+              width={150}
+            />
+          </div>
           <p>
             The world’s first and largest digital marketplace for crypto
             collectibles and non-fungible tokens (NFTs). Buy, sell, and discover

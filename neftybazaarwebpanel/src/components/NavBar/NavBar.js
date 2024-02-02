@@ -132,7 +132,7 @@ const NavBar = () => {
           {/*LOGO */}
           <div className={Style.logo}>
             <Image
-              src={images.logo}
+              src={images.neftybazar}
               alt="NeftyBazaar Logo"
               width={150}
               height={100}
