@@ -8,6 +8,8 @@ import { useDropzone } from "react-dropzone";
 import Style from "./account.module.css";
 import images from "../../img/index";
 import From from "@/components/AccountPage/Form/Form";
+// import { Button } from "@/components/componentsindex";
+// import { TiLocationArrowOutline } from "react-icons/ti";
 
 const account = () => {
   const [fileUrl, setFileUrl] = useState(null);
@@ -43,6 +45,10 @@ const account = () => {
             className={Style.account_box_img_img}
           />
           <p className={Style.account_box_img_para}>Change Image</p>
+
+          {/* <div className={Style.button}>
+            <Button btnName="Change Image" icon={<TiLocationArrowOutline />} />
+          </div> */}
         </div>
         <div className={Style.account_box_from}>
           <From />

@@ -16,7 +16,7 @@ const Form = () => {
       <div className={Style.Form_box}>
         <form>
           <div className={Style.Form_box_input}>
-            <label htmlFor="name">Username</label>
+            <label htmlFor="name">Username *</label>
             <input
               type="text"
               placeholder="shoaib bhai"
@@ -25,7 +25,7 @@ const Form = () => {
           </div>
 
           <div className={Style.Form_box_input}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email *</label>
             <div className={Style.Form_box_input_box}>
               <div className={Style.Form_box_input_box_icon}>
                 <HiOutlineMail />
@@ -35,7 +35,7 @@ const Form = () => {
           </div>
 
           <div className={Style.Form_box_input}>
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description">Description *</label>
             <textarea
               name=""
               id=""
@@ -46,7 +46,7 @@ const Form = () => {
           </div>
 
           <div className={Style.Form_box_input}>
-            <label htmlFor="website">Website</label>
+            <label htmlFor="website">Website *</label>
             <div className={Style.Form_box_input_box}>
               <div className={Style.Form_box_input_box_icon}>
                 <MdOutlineHttp />
@@ -58,7 +58,7 @@ const Form = () => {
 
           <div className={Style.Form_box_input_social}>
             <div className={Style.Form_box_input}>
-              <label htmlFor="facebook">Facebook</label>
+              <label htmlFor="facebook">Facebook *</label>
               <div className={Style.Form_box_input_box}>
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialFacebook />
@@ -67,7 +67,7 @@ const Form = () => {
               </div>
             </div>
             <div className={Style.Form_box_input}>
-              <label htmlFor="Twitter">Twitter</label>
+              <label htmlFor="Twitter">Twitter *</label>
               <div className={Style.Form_box_input_box}>
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialTwitter />
@@ -76,7 +76,7 @@ const Form = () => {
               </div>
             </div>
             <div className={Style.Form_box_input}>
-              <label htmlFor="Instragram">Instragram</label>
+              <label htmlFor="Instragram">Instragram *</label>
               <div className={Style.Form_box_input_box}>
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialInstagram />
@@ -87,7 +87,7 @@ const Form = () => {
           </div>
 
           <div className={Style.Form_box_input}>
-            <label htmlFor="wallet">Wallet address</label>
+            <label htmlFor="wallet">Wallet address *</label>
             <div className={Style.Form_box_input_box}>
               <div className={Style.Form_box_input_box_icon}>
                 <MdOutlineHttp />

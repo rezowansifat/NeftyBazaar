@@ -1,27 +1,37 @@
 .Form {
   width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  background: #232323;
+  margin-bottom: 50px;
 }
 
 .Form_box_input {
   margin-top: 2rem;
+  color: #fff;
 }
 
 .Form_box_input label {
   display: block;
   width: 100%;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
+  text-align: left;
   font-weight: 700;
   font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
 .Form_box_input_userName {
   width: 100%;
-  border: 1px solid var(--icons-color);
+  border: 1px solid #000;
   padding: 1rem;
   border-radius: 1rem;
   background-color: transparent;
   margin-top: 0.5rem;
   outline: none;
+  background-color: #000;
+  color: white;
+  /* color: black; */
 }
 
 .Form_box_input::placeholder {
@@ -31,21 +41,26 @@
 
 .Form_box_input_box {
   width: 100%;
-  border: 1px solid var(--icons-color);
+  /* border: 1px solid #000; */
   border-radius: 1rem;
   align-items: center;
   display: flex;
   gap: 1rem;
   overflow: hidden;
+  background-color: #000;
 }
 
 .Form_box_input_box_icon {
   font-size: 2rem;
-  background-color: var(--icons-color);
+  background-color: var(--secondary-color);
   padding: 0.5rem 1rem;
   color: var(--main-bg-color);
   display: grid;
   cursor: pointer;
+}
+
+.Form_box_input_box_icon:hover {
+  background-color: var(--icons-bg-color);
 }
 
 .Form_box_input_box input {
@@ -53,14 +68,18 @@
   border: 0;
   background-color: transparent;
   outline: none;
+  color: white;
 }
 
 .Form_box_input textarea {
   width: 100%;
-  background-color: transparent;
+  /* background-color: transparent; */
   outline: none;
   border-radius: 1rem;
   padding: 1rem;
+  background-color: #000;
+  border: 1px solid #000;
+  color: white;
 }
 
 .Form_box_input_social {
@@ -69,7 +88,10 @@
   gap: 1rem;
 }
 .Form_box_btn {
+  width: 100%;
   margin: 4rem 0;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
@@ -78,6 +100,22 @@
   justify-content: center;
   font-size: 1.5rem;
 }
+
+/* .lower_part {
+  display: flex;
+}
+
+.lower_part_font {
+  color: #ffffff8a;
+  font-size: 1.5rem;
+  width: 40%;
+}
+
+.lower_part_hr {
+  margin-top: 15px;
+  color: #ffffff8a;
+  width: 100%;
+} */
 
 @media screen and (max-width: 35em) {
   .Form_box_input_social {

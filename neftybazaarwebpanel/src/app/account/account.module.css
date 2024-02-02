@@ -1,31 +1,46 @@
 .account {
   width: 100%;
-  margin-block: 6rem;
+  margin-top: 6rem;
+  text-align: center;
 }
 
 .account_info {
-  width: 50%;
-  margin: 0 auto;
-  border-bottom: 1px solid var(--shadow-dark-color);
+  margin: auto auto;
+  width: 100%;
+  /* border-bottom: 1px solid var(--shadow-dark-color); */
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 55px;
+  text-transform: capitalize;
 }
 
 .account_info h1 {
+  color: #ffffff8a;
   font-size: 4rem;
   line-height: 0.5;
+  margin-bottom: 3rem;
+}
+
+.account_info h1:hover {
+  color: var(--secondary-color);
 }
 
 .account_info p {
   font-size: 1.3rem;
-  width: 80%;
+  width: 100%;
   line-height: 1.2;
   padding-bottom: 0.5rem;
 }
 
+.account_info p:hover {
+  color: var(--secondary-color);
+}
+
 .account_box {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 1fr 5fr;
   margin-top: 3rem;
   gap: 3rem;
@@ -40,13 +55,28 @@
 }
 
 .account_box_img_img {
-  border-radius: 50%;
+  border-radius: 10%;
+  margin-bottom: 15px;
 }
 
 .account_box_img_para {
   font-weight: 700;
   font-size: 1rem;
   line-height: 0;
+  margin-bottom: 20px;
+  color: #ffffff8a;
+}
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.account_box_img_para:hover {
+  color: var(--secondary-color);
 }
 
 @media screen and (max-width: 35em) {
