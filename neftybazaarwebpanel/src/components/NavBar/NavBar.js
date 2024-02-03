@@ -14,7 +14,7 @@ import { RiMenu4Fill } from "react-icons/ri";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { Button } from "../componentsindex";
+import { Button, GlobalError } from "../componentsindex";
 import { Notification, Profile, SideBar } from "./index";
 import images from "../../img/index";
 import Backdrop from "../Backdrop/Backdrop";
@@ -67,7 +67,8 @@ const NavBar = () => {
   }, []);
 
   //SMART CONTRACT PART
-  const { connectWallet, currentAccount } = useContext(NeftyBazaarContext);
+  const { connectWallet, currentAccount, openError } =
+    useContext(NeftyBazaarContext);
 
   const helpCenter = [
     {
@@ -272,6 +273,8 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+
+      <GlobalError />
 
       {/* SIDBAR*/}
       <SideBar sidebar={sideBar} closeSidebar={toggleSideBar} />
