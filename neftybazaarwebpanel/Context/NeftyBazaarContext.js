@@ -28,7 +28,7 @@ const connectingWithContract = async () => {
 
     return contract;
   } catch (error) {
-    setOenError(true);
+    setOpenError(true);
     setError("Somthing went wrong whele connecting with the contract");
   }
 };
@@ -38,7 +38,7 @@ export const NeftyBazaarContext = React.createContext();
 export const NeftyBazaarProvider = ({ children }) => {
   //USESTATES
   const [error, setError] = useState("");
-  const [openError, setOenError] = useState(false);
+  const [openError, setOpenError] = useState(false);
 
   const [currentAccount, setCurrentAccount] = useState("");
 
@@ -48,7 +48,7 @@ export const NeftyBazaarProvider = ({ children }) => {
   const checkIFWalletConnected = async () => {
     try {
       if (!window.ethereum) return;
-      setOenError(true), setError("INSTALL META MASK");
+      setOpenError(true), setError("INSTALL META MASK");
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -60,11 +60,11 @@ export const NeftyBazaarProvider = ({ children }) => {
         // console.log(accounts[0]);
         setCurrentAccount(accounts[0]);
       } else {
-        setOenError(true);
+        setOpenError(true);
         setError("NO Account Found");
       }
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Somthing went wrong whele connecting account`);
     }
   };
@@ -73,7 +73,7 @@ export const NeftyBazaarProvider = ({ children }) => {
   const connectWallet = async () => {
     try {
       if (!window.ethereum)
-        return setOenError(true), setError("Install Wallet");
+        return setOpenError(true), setError("Install Wallet");
 
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
@@ -83,7 +83,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       //window.location.reload();
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Somthing went wrong whele connecting wallet`);
     }
   };
@@ -110,11 +110,11 @@ export const NeftyBazaarProvider = ({ children }) => {
 
         return imgHash;
       } catch (error) {
-        setOenError(true);
+        setOpenError(true);
         setError(`Error Uploading to IPFS`);
       }
     } else {
-      setOenError(true);
+      setOpenError(true);
       setError(`File Not Found To upload`);
     }
   };
@@ -122,7 +122,7 @@ export const NeftyBazaarProvider = ({ children }) => {
   //Create NFT
   const createNFT = async (name, price, image, description, router) => {
     if (!name || !description || !price || !image)
-      return setOenError(true), setError("Data Is Missing");
+      return setOpenError(true), setError("Data Is Missing");
 
     const data = JSON.stringify({ name, description, image });
 
@@ -145,7 +145,7 @@ export const NeftyBazaarProvider = ({ children }) => {
       await createSale(url, price);
       // router.push("/search");
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Error While Create Nft`);
     }
   };
@@ -169,7 +169,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       await transaction.wait();
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Error While Creating Sale `);
     }
   };
@@ -208,7 +208,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       return items;
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Error While Fteching NFTs`);
     }
   };
@@ -255,7 +255,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       return items;
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Error While Fteching Listed NFTs`);
     }
   };
@@ -275,7 +275,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       router.push("/author");
     } catch (error) {
-      setOenError(true);
+      setOpenError(true);
       setError(`Error While Buying NFT`);
     }
   };
@@ -293,7 +293,7 @@ export const NeftyBazaarProvider = ({ children }) => {
         currentAccount,
         checkIFWalletConnected,
         currentAccount,
-        setOenError,
+        setOpenError,
         openError,
         error,
       }}
