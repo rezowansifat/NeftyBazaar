@@ -14,13 +14,9 @@ const GlobalError = () => {
   console.log(openError);
   console.log(error);
   return (
-    <div
-      className={`${Style.Error}, ${
-        openError ? Style.Error_open : Style.Error_close
-      }`}
-    >
-      <div className={Style.Error_box}>
-        <div className={Style.Error_box_info}>
+    <div className={`${Style.error} ${openError ? Style.toggled : ""}`}>
+      <div className={Style.error_box}>
+        <div className={Style.error_box_info}>
           <IoMdCloseCircleOutline
             className={Style.close}
             onClick={() => setOenError(false)}
