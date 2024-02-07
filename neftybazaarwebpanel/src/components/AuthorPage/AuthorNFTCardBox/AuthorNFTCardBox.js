@@ -76,8 +76,7 @@ const AuthorNFTCardBox = ({
       user: images.user1,
     },
   ];
-  // console.log(nfts);
-  // console.log(myNFTs);
+
   return (
     <div className={Style.AuthorNFTCardBox}>
       <>
