@@ -11,7 +11,7 @@
   width: 255px;
 }
 
-.hero_card:hover .card_media a img {
+.hero_card:hover .img_box img {
   transform: scale(1.1);
 }
 
@@ -26,16 +26,17 @@
   overflow: hidden;
 }
 
-.card_media a {
+.img_box {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   width: 100%;
-  height: 100%;
+  height: 234px;
 }
-.card_media a img {
+.img_box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.2s ease-in-out;
 }
 .wishlist_button {
   position: absolute;
@@ -55,7 +56,7 @@
 .wishlist_button svg {
   font-size: 18px;
 }
-.card_media a img {
+.img_box img {
   width: 100%;
   object-fit: cover;
   transition: all 0.2s ease;
@@ -79,12 +80,12 @@
   text-align: start;
 }
 
-.card_info .card_name a {
+.card_info .card_name span {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
-.card_info .card_name a:hover {
+.card_info .card_name span:hover {
   color: var(--secondary-color);
   outline: 0;
 }
@@ -117,7 +118,7 @@
   opacity: 0;
   transition: all 0.2s ease;
 }
-.button_place a {
+.button_place div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,7 +134,7 @@
   text-transform: capitalize;
   transition: all 0.3s ease;
 }
-.button_place:hover a {
+.button_place:hover div {
   color: var(--dark-color);
   background-color: var(--secondary-color);
 }

@@ -177,8 +177,9 @@ export const NeftyBazaarProvider = ({ children }) => {
   //Fetch All Nfts
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.JsonRpcProvider();
-      const contract = neftyBazaarFetchContract(provider);
+      // const provider = new ethers.JsonRpcProvider();
+      // const contract = neftyBazaarFetchContract(provider);
+      const contract = await connectingWithContract();
       const data = await contract.fetchMarketItems();
 
       const items = await Promise.all(
@@ -208,6 +209,7 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       return items;
     } catch (error) {
+      console.log(error);
       setOpenError(true);
       setError(`Error While Fteching NFTs`);
     }

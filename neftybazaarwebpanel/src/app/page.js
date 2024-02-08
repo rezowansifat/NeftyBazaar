@@ -17,21 +17,8 @@ const Home = () => {
     useContext(NeftyBazaarContext);
 
   const [nfts, setNfts] = useState([]);
-  const [topCreators, setTopCreators] = useState([]);
-  console.log(nfts);
-  //Top Creator List
 
-  // if (nfts.length > 0) {
-  //   const TopCreators = getTopCreators(nfts);
-  // }
-
-  // useEffect(() => {
-  //   // Call getTopCreators only when nfts have data
-  //   if (nfts.length > 0) {
-  //     getTopCreators(nfts);
-  //     setTopCreators(topCreators);
-  //   }
-  // }, [nfts]);
+  const TopCreators = getTopCreators(nfts);
 
   useEffect(() => {
     checkIFWalletConnected();
@@ -52,7 +39,7 @@ const Home = () => {
         paragraph="প্রোফাইল ব্রাউজ করুন, শীর্ষ নির্মাতাদের খুঁজুন"
       />
 
-      {/* {TopCreators.length == 0 ? (
+      {TopCreators.length == 0 ? (
         <Loader />
       ) : (
         <div className={authorStyle.author_box}>
@@ -60,7 +47,7 @@ const Home = () => {
             <FollowerTabCard i={i} el={el} />
           ))}
         </div>
-      )} */}
+      )}
     </>
   );
 };
