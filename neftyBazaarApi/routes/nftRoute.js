@@ -1,11 +1,15 @@
 const express = require("express");
 
-const { getAllNfts, createNfts } = require("../controllers/nftController");
+const {
+  getAllNFTs,
+  createNFT,
+  getSingleNFT,
+} = require("../controllers/nftController");
 
 //Routs
 const router = express.Router();
 
-router.route("/nfts").get(getAllNfts);
-router.route("/nfts").post(createNfts);
+router.route("/nfts").get(getAllNFTs).post(createNFT);
+router.route("/nfts/:id").get(getSingleNFT);
 
 module.exports = router;
