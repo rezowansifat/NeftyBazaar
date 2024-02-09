@@ -51,7 +51,6 @@ const page = () => {
       <Banner bannerImage={images.creatorbackground2} />
       <SearchBar onHandleSerch={onHandleSerch} onClearSearch={onClearSearch} />
       <Filter />
-
       <NFTCards NFTData={nfts} />
       <FeaturedItem />
       <Brand />

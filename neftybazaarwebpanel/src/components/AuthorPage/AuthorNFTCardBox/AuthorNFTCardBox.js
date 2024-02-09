@@ -76,12 +76,11 @@ const AuthorNFTCardBox = ({
       user: images.user1,
     },
   ];
-  // console.log(nfts);
-  // console.log(myNFTs);
+
   return (
     <div className={Style.AuthorNFTCardBox}>
       <>
-        {nfts.length == 0 ? (
+        {collectiables && nfts.length == 0 ? (
           <Loader />
         ) : (
           <>
@@ -99,7 +98,7 @@ const AuthorNFTCardBox = ({
       </>
 
       <>
-        {myNFTs.length == 0 ? (
+        {created && myNFTs.length == 0 ? (
           <Loader />
         ) : (
           <>

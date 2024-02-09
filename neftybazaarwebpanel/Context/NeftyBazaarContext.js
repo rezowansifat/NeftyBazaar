@@ -28,9 +28,8 @@ const connectingWithContract = async () => {
 
     return contract;
   } catch (error) {
-    console.log(
-      `Somthing went wrong whele connecting with the contract: ${error}`
-    );
+    setOpenError(true);
+    setError("Somthing went wrong whele connecting with the contract");
   }
 };
 
@@ -38,6 +37,9 @@ export const NeftyBazaarContext = React.createContext();
 
 export const NeftyBazaarProvider = ({ children }) => {
   //USESTATES
+  const [error, setError] = useState("");
+  const [openError, setOpenError] = useState(false);
+
   const [currentAccount, setCurrentAccount] = useState("");
 
   const router = useRouter();
@@ -45,7 +47,8 @@ export const NeftyBazaarProvider = ({ children }) => {
   //CHECK WALLET CONNECTED OR NOT
   const checkIFWalletConnected = async () => {
     try {
-      if (!window.ethereum) return console.log("INSTALL META MASK");
+      if (!window.ethereum) return;
+      setOpenError(true), setError("INSTALL META MASK");
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -57,17 +60,20 @@ export const NeftyBazaarProvider = ({ children }) => {
         // console.log(accounts[0]);
         setCurrentAccount(accounts[0]);
       } else {
-        console.log("NO Account Found");
+        setOpenError(true);
+        setError("NO Account Found");
       }
     } catch (error) {
-      console.log(`Somthing went wrong whele connecting account ${error}`);
+      setOpenError(true);
+      setError(`Somthing went wrong whele connecting account`);
     }
   };
 
   //Connect Wallet On Click
   const connectWallet = async () => {
     try {
-      if (!window.ethereum) return console.log("Install Wallet");
+      if (!window.ethereum)
+        return setOpenError(true), setError("Install Wallet");
 
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
@@ -77,7 +83,8 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       //window.location.reload();
     } catch (error) {
-      console.log(`Somthing went wrong whele connecting wallet ${error}`);
+      setOpenError(true);
+      setError(`Somthing went wrong whele connecting wallet`);
     }
   };
 
@@ -103,15 +110,19 @@ export const NeftyBazaarProvider = ({ children }) => {
 
         return imgHash;
       } catch (error) {
-        console.log(`Error Uploading to IPFS ${error}`);
+        setOpenError(true);
+        setError(`Error Uploading to IPFS`);
       }
-    } else console.log(`File Not Found To upload`);
+    } else {
+      setOpenError(true);
+      setError(`File Not Found To upload`);
+    }
   };
 
   //Create NFT
   const createNFT = async (name, price, image, description, router) => {
     if (!name || !description || !price || !image)
-      return console.log("Data Is Missing");
+      return setOpenError(true), setError("Data Is Missing");
 
     const data = JSON.stringify({ name, description, image });
 
@@ -130,12 +141,12 @@ export const NeftyBazaarProvider = ({ children }) => {
       });
 
       const url = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
-      console.log(url);
 
       await createSale(url, price);
       // router.push("/search");
     } catch (error) {
-      console.log(`Error While Create Nft ${error}`);
+      setOpenError(true);
+      setError(`Error While Create Nft`);
     }
   };
 
@@ -143,7 +154,7 @@ export const NeftyBazaarProvider = ({ children }) => {
   const createSale = async (url, fromInputPrice, isReselling, id) => {
     try {
       const price = ethers.parseUnits(fromInputPrice, "ether");
-      // const price = formatUnits(fromInputPrice.toString(), "ether");
+
       const contract = await connectingWithContract();
 
       const listingPrice = await contract.getListingPrice();
@@ -157,17 +168,18 @@ export const NeftyBazaarProvider = ({ children }) => {
           });
 
       await transaction.wait();
-      console.log(transaction);
     } catch (error) {
-      console.log(`Error While Creating Sale ${error}`);
+      setOpenError(true);
+      setError(`Error While Creating Sale `);
     }
   };
 
   //Fetch All Nfts
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.JsonRpcProvider();
-      const contract = neftyBazaarFetchContract(provider);
+      // const provider = new ethers.JsonRpcProvider();
+      // const contract = neftyBazaarFetchContract(provider);
+      const contract = await connectingWithContract();
       const data = await contract.fetchMarketItems();
 
       const items = await Promise.all(
@@ -197,18 +209,15 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       return items;
     } catch (error) {
-      console.log(`Error While Fteching NFTs ${error}`);
+      console.log(error);
+      setOpenError(true);
+      setError(`Error While Fteching NFTs`);
     }
   };
 
   useEffect(() => {
     checkIFWalletConnected();
     fetchNFTs();
-    console.log(
-      fetchNFTs().then((item) => {
-        console.log(item);
-      })
-    );
   }, []);
 
   //Fetching My NFts or Listed Nfts
@@ -248,14 +257,14 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       return items;
     } catch (error) {
-      console.log(`Error While Fteching Listed NFTs ${error}`);
+      setOpenError(true);
+      setError(`Error While Fteching Listed NFTs`);
     }
   };
 
   //Buy NFts
   const buyNFT = async (nft) => {
     try {
-      console.log(nft);
       const contract = await connectingWithContract();
 
       const price = ethers.parseUnits(nft.price.toString(), "ether");
@@ -268,7 +277,8 @@ export const NeftyBazaarProvider = ({ children }) => {
 
       router.push("/author");
     } catch (error) {
-      console.log(`Error While Buying NFT ${error}`);
+      setOpenError(true);
+      setError(`Error While Buying NFT`);
     }
   };
 
@@ -285,6 +295,9 @@ export const NeftyBazaarProvider = ({ children }) => {
         currentAccount,
         checkIFWalletConnected,
         currentAccount,
+        setOpenError,
+        openError,
+        error,
       }}
     >
       {children}

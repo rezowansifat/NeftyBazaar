@@ -1,0 +1,53 @@
+.error {
+  background: var(--primary-color);
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 20rem;
+  border-bottom: 2px solid var(--secondary-color);
+  box-shadow: var(--box-shadow);
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+}
+
+.error.toggled {
+  transform: translateX(0%);
+}
+
+.error_box {
+  padding: 10px;
+}
+.error_box_info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.close {
+  font-size: 18px !important;
+  color: var(--secondary-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff !important;
+}
+
+.error_box_info svg {
+  font-size: 25px;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.error_box_info p {
+  color: hsla(0, 0%, 100%, 0.53);
+  font-size: 14px;
+  line-height: 22px;
+}

@@ -14,30 +14,34 @@ const ItemCard = ({ cardData }) => {
         <div className={Style.hero_card}>
           {/* CARD MEDIA */}
           <div className={Style.card_media}>
-            <Link href="#">
+            <div className={Style.img_box}>
               <Image
                 src={cardData.image}
                 alt="Card Image"
                 width={330}
                 height={340}
               />
-            </Link>
+            </div>
+
             <span className={Style.wishlist_button}>
               <FaRegHeart />
             </span>
 
             {/* BUTTON */}
             <div className={Style.button_place}>
-              <Link href="#">
+              <div>
                 <span>বিড করুন</span>
-              </Link>
+              </div>
             </div>
           </div>
 
           {/* CARD INFO */}
           <div className={Style.card_info}>
             <div className={Style.card_name}>
-              <Link href="/#">{cardData.name}</Link>
+              <span>
+                {cardData.name.substring(0, 20)}
+                {cardData.name.length > 16 ? "...." : ""}
+              </span>
             </div>
             <div className={Style.item_info}>
               <div className={Style.author_avatar}>
@@ -46,7 +50,7 @@ const ItemCard = ({ cardData }) => {
               <div className={Style.author_info}>
                 <span>পোস্ট করেছেন:</span>
                 <p>
-                  <Link href="/author-2">Cody Fisher</Link>
+                  <span>Rezowan Sifat</span>
                 </p>
               </div>
             </div>
