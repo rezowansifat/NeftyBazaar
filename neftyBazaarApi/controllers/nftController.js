@@ -58,3 +58,40 @@ exports.getSingleNFT = catchAsyncErrors(async (req, res, next) => {
     },
   });
 });
+
+//PATCH NFT
+exports.updateNFT = catchAsyncErrors(async (req, res, next) => {
+  const id = req.params.id * 1;
+  const nft = nfts.find((el) => el.id === id);
+
+  if (!nft) {
+    return next(
+      new ErrorHander(`No Meeting Occurred Yeat: ${req.params.id}`, 404)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "update successfully",
+    data: {
+      nft,
+    },
+  });
+});
+
+//DELET NFT
+exports.deleteNFT = catchAsyncErrors(async (req, res, next) => {
+  const id = req.params.id * 1;
+  const nft = nfts.find((el) => el.id === id);
+
+  if (!nft) {
+    return next(
+      new ErrorHander(`No Meeting Occurred Yeat: ${req.params.id}`, 404)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "Deleted Successfully",
+  });
+});
