@@ -3,7 +3,7 @@ const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const fs = require("fs");
 
 const nfts = JSON.parse(
-  fs.readFileSync(`${__dirname}/../data/nft-simple.json`)
+  fs.readFileSync(`${__dirname}/../public/data/nft-simple.json`)
 );
 
 // GET ALL NFT
@@ -79,7 +79,7 @@ exports.updateNFT = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-//DELET NFT
+//DELETE NFT
 exports.deleteNFT = catchAsyncErrors(async (req, res, next) => {
   const id = req.params.id * 1;
   const nft = nfts.find((el) => el.id === id);

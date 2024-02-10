@@ -13,6 +13,9 @@ dotenv.config({ path: "./config/config.env" });
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//Static
+app.use(express.static(`${__dirname}/public/img`));
+
 // Route Imports
 const nft = require("./routes/nftRoute");
 const user = require("./routes/userRoute");
