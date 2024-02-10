@@ -15,8 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route Imports
 const nft = require("./routes/nftRoute");
+const user = require("./routes/userRoute");
 
 app.use("/api/v1/", nft);
+app.use("/api/v1/", user);
 
 app.use(errorMiddleware);
 module.exports = app;
