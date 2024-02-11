@@ -27,7 +27,7 @@ exports.createUser = catchAsyncErrors(async (req, res, next) => {
 exports.updateUser = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
-    message: "updated successfully",
+    message: "Updated Successfully",
   });
 });
 
