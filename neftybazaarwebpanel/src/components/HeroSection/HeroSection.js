@@ -9,8 +9,10 @@ import { Button } from "../componentsindex";
 import images from "../../img";
 import HeroSlider from "./HeroSlider/HeroSlider";
 import HeroCard from "./HeroCard/HeroCard";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const router = useRouter();
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_container}>
@@ -23,12 +25,12 @@ const HeroSection = () => {
           <div className={Style.herro_buttons}>
             <Button
               btnName="আরো দেখুন"
-              handleClick={() => {}}
+              handleClick={() => router.push("/search")}
               icon={<TiLocationArrowOutline />}
             />
             <Button
               btnName="সমস্ত সংগ্রহ"
-              handleClick={() => {}}
+              handleClick={() => router.push("/search")}
               icon={<TiLocationArrowOutline />}
             />
           </div>

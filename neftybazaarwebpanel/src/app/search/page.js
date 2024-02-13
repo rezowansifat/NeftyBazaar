@@ -53,7 +53,6 @@ const page = () => {
       <Filter />
       <NFTCards NFTData={nfts} />
       <FeaturedItem />
-      <Brand />
     </div>
   );
 };
