@@ -3,7 +3,6 @@
 import FeaturedItem from "@/components/FeaturedItems/FeaturedItem";
 import { HeroSection } from "@/components/componentsindex";
 import { useContext, useEffect, useState } from "react";
-
 import NeftyBazaarContext from "../../Context/NeftyBazaarContext";
 import Loader from "@/components/Loader/Loader";
 import { getTopCreators } from "../../topCreators/topCreators";
@@ -17,8 +16,7 @@ const Home = () => {
     useContext(NeftyBazaarContext);
 
   const [nfts, setNfts] = useState([]);
-
-  const TopCreators = getTopCreators(nfts);
+  const [topCreators, setTopCreators] = useState([]);
 
   useEffect(() => {
     checkIFWalletConnected();
@@ -30,6 +28,13 @@ const Home = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (nfts && nfts.length > 0) {
+      const creators = getTopCreators(nfts);
+      setTopCreators(creators);
+    }
+  }, [nfts]);
+
   return (
     <>
       <HeroSection />
@@ -39,11 +44,11 @@ const Home = () => {
         paragraph="প্রোফাইল ব্রাউজ করুন, শীর্ষ নির্মাতাদের খুঁজুন"
       />
 
-      {TopCreators.length == 0 ? (
+      {topCreators.length == 0 ? (
         <Loader />
       ) : (
         <div className={authorStyle.author_box}>
-          {TopCreators.map((el, i) => (
+          {topCreators.map((el, i) => (
             <FollowerTabCard i={i} el={el} />
           ))}
         </div>
