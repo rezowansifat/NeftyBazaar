@@ -45,25 +45,25 @@ const NFTDescription = ({ nft }) => {
   const [owner, setOwner] = useState(false);
 
   const historyArray = [
-    images.user1,
-    images.user2,
-    images.user3,
-    images.user4,
-    images.user5,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
   ];
   const provananceArray = [
-    images.user6,
-    images.user7,
-    images.user8,
-    images.user9,
-    images.user10,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
   ];
   const ownerArray = [
-    images.user1,
-    images.user8,
-    images.user2,
-    images.user6,
-    images.user5,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
+    images.defaultUser,
   ];
 
   const openSocial = () => {
@@ -182,7 +182,7 @@ const NFTDescription = ({ nft }) => {
             <div className={Style.NFTDescription_box_profile_box}>
               <div className={Style.NFTDescription_box_profile_box_left}>
                 <Image
-                  src={images.user1}
+                  src={images.defaultUser}
                   alt="profile"
                   width={40}
                   height={40}
@@ -191,14 +191,14 @@ const NFTDescription = ({ nft }) => {
                 <div className={Style.NFTDescription_box_profile_box_left_info}>
                   <small>Creator</small> <br />
                   <span>
-                    Karli Costa <MdVerified />
+                    Jason Lyons <MdVerified />
                   </span>
                 </div>
               </div>
 
               <div className={Style.NFTDescription_box_profile_box_right}>
                 <Image
-                  src={images.user2}
+                  src={images.creatorbackground7}
                   alt="profile"
                   width={40}
                   height={40}
@@ -210,7 +210,7 @@ const NFTDescription = ({ nft }) => {
                 >
                   <small>Collection</small> <br />
                   <span>
-                    Monkey App <MdVerified />
+                    Monkey Nfs <MdVerified />
                   </span>
                 </div>
               </div>

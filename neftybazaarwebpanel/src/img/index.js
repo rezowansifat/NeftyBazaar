@@ -53,6 +53,7 @@ import provider2 from "./provider-2.png";
 import provider3 from "./provider-3.png";
 import provider4 from "./provider-4.png";
 import neftybazar from "./neftybazar.png";
+import defaultUser from "./default.jpg";
 
 export default {
   neftybazar,
@@ -110,4 +111,5 @@ export default {
   provider2,
   provider3,
   provider4,
+  defaultUser,
 };

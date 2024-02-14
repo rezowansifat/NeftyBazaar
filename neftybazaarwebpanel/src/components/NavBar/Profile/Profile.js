@@ -14,7 +14,7 @@ const Profile = ({ currentAccount, openProfile }) => {
     <div className={Style.profile}>
       <div className={Style.profile_account}>
         <Image
-          src={images.user1}
+          src={images.defaultUser}
           alt="user profile"
           width={50}
           height={50}
@@ -22,7 +22,7 @@ const Profile = ({ currentAccount, openProfile }) => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Shoaib Bhai</p>
+          <p>Wallet Address </p>
           <small>
             {currentAccount.slice(0, 10)}...{currentAccount.slice(-6)}
           </small>

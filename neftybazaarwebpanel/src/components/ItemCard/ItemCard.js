@@ -45,12 +45,14 @@ const ItemCard = ({ cardData }) => {
             </div>
             <div className={Style.item_info}>
               <div className={Style.author_avatar}>
-                <Image src={images.user10} alt="Image" />
+                <Image src={images.defaultUser} alt="Image" />
               </div>
               <div className={Style.author_info}>
                 <span>পোস্ট করেছেন:</span>
                 <p>
-                  <span>Rezowan Sifat</span>
+                  <span>
+                    {cardData.seller.slice(0, 4)}...{cardData.seller.slice(-4)}
+                  </span>
                 </p>
               </div>
             </div>

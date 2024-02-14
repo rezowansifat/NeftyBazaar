@@ -131,6 +131,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           {/*LOGO */}
+
           <div className={Style.logo}>
             <Image
               src={images.neftybazar}
@@ -244,7 +245,7 @@ const NavBar = () => {
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
               <Image
-                src={images.user1}
+                src={images.defaultUser}
                 alt="Profile"
                 width={40}
                 height={40}

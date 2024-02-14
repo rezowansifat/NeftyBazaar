@@ -16,6 +16,7 @@ import Category from "@/components/Category/Category";
 //CONTEXT
 import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Banner } from "@/components/Collection/collectionIndex";
 
 const page = () => {
   const { currentAccount } = useContext(NeftyBazaarContext);
@@ -50,7 +51,7 @@ const page = () => {
     <>
       <NFTDetailsPage nft={nft} />
       <Category />
-      <Brand />
+      <Banner />
     </>
   );
 };
