@@ -1,0 +1,74 @@
+.connectCardWallet {
+  width: 100%;
+  margin-block: 5rem;
+}
+
+.connectCardWallet_box {
+  margin: 0 auto;
+  width: 450px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding-top: 5px;
+  height: 550px;
+}
+
+.connectCardWallet_box h1 {
+  font-size: 3rem;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  color: var(--icons-color);
+}
+
+.connectCardWallet_box_para {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--shadow-dark-color);
+}
+
+.connectCardWallet_box_provider {
+  margin-block: 5rem;
+}
+
+.connectCardWallet_box_provider_item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  border: px solid var(--shadow-dark-color);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  color: aliceblue;
+  background-color: #131313;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.connectCardWallet_box_provider_item:hover {
+  background-color: var(--secondary-color);
+  color: var(--blk);
+}
+
+.connectCardWallet_box_provider_item_img {
+  border-radius: 50%;
+}
+
+.connectCardWallet_box_provider_item p {
+  font-size: 1.5rem;
+}
+
+.active {
+  box-shadow: var(--box-shadow);
+}
+@media screen and (max-width: 35em) {
+  .connectCardWallet_box {
+    width: 90%;
+  }
+
+  .connectCardWallet_box h1 {
+    font-size: 1.5rem;
+  }
+}
