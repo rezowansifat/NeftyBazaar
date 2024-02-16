@@ -53,6 +53,10 @@ import provider2 from "./provider-2.png";
 import provider3 from "./provider-3.png";
 import provider4 from "./provider-4.png";
 import neftybazar from "./neftybazar.png";
+import myNewPicture from "./myNewPicture.png";
+import myNewPicture_2 from "./myNewPicture_2.png";
+import BrandBackground from "./BrandBackground.png";
+import NewDragonImage from "./NewDragonImage.png";
 
 export default {
   neftybazar,
@@ -110,4 +114,8 @@ export default {
   provider2,
   provider3,
   provider4,
+  myNewPicture,
+  myNewPicture_2,
+  BrandBackground,
+  NewDragonImage,
 };

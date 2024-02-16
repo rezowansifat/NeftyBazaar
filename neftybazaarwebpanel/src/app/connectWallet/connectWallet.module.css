@@ -35,7 +35,8 @@
 }
 
 .connectWallet_box_provider_item:hover {
-  background-color: var(--shadow-dark-color);
+  background-color: var(--secondary-color);
+  color: var(--blk);
 }
 
 .connectWallet_box_provider_item_img {
