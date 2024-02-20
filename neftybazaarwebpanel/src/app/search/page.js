@@ -14,6 +14,7 @@ import { Banner } from "@/components/Collection/collectionIndex";
 //CONTEXT
 import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
 import NFTCards from "@/components/Collection/NFTCards/NFTCards";
+import { getTopItems } from "../../../topItems/topItems";
 
 const page = () => {
   const { fetchNFTs } = useContext(NeftyBazaarContext);
@@ -25,6 +26,8 @@ const page = () => {
     fetchNFTs().then((items) => {
       setNfts(items.reverse());
       setNftsCopy(items);
+      console.log(items);
+      console.log(getTopItems(items));
     });
   }, []);
 
