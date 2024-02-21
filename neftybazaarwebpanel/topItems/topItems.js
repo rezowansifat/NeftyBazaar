@@ -13,11 +13,14 @@ export const getTopItems = (items) => {
       (total, item) => total + parseFloat(item.price),
       0
     );
-
-    topItems.push({ tokenId: parseInt(tokenId), totalEarnings });
+    topItems.push({
+      tokenId: parseInt(tokenId),
+      totalEarnings,
+      item: itemList[0],
+    });
   });
 
   topItems.sort((a, b) => b.totalEarnings - a.totalEarnings);
 
-  return topItems;
+  return topItems.slice(0, 7);
 };

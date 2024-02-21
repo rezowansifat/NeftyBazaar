@@ -26,7 +26,6 @@ const page = () => {
     fetchNFTs().then((items) => {
       setNfts(items.reverse());
       setNftsCopy(items);
-      console.log(items);
       console.log(getTopItems(items));
     });
   }, []);
