@@ -6,12 +6,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import HeroCard from "../HeroCard/HeroCard";
 
-const HeroSlider = () => {
+const HeroSlider = ({ topItems }) => {
+  console.log(topItems);
   return (
     <div className={Style.hero_slider}>
       <Swiper
@@ -31,51 +33,15 @@ const HeroSlider = () => {
         modules={[EffectCoverflow, Pagination]}
         className="hero_hwiper"
       >
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="hero_hwiper_slide">
-          <div className={Style.swiper_slide}>
-            <HeroCard />
-          </div>
-        </SwiperSlide>
+        {topItems.map((data, i) => (
+          <SwiperSlide className="hero_hwiper_slide">
+            <div className={Style.swiper_slide}>
+              <Link href={{ pathname: "/details", query: data }} key={i}>
+                <HeroCard cardData={data} />
+              </Link>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

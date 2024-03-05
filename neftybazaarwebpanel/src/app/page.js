@@ -11,6 +11,7 @@ import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTa
 
 import authorStyle from "./author/author.module.css";
 import { getFeatheredItems } from "../../featheredItems/featheredItems";
+import { getTopItems } from "../../topItems/topItems";
 
 const Home = () => {
   const { fetchNFTs, checkIFWalletConnected, currentAccount } =
@@ -19,6 +20,7 @@ const Home = () => {
   const [nfts, setNfts] = useState([]);
   const [topCreators, setTopCreators] = useState([]);
   const [featheredItems, setFeatheredItems] = useState([]);
+  const [topItems, setTopItems] = useState([]);
 
   useEffect(() => {
     checkIFWalletConnected();
@@ -34,14 +36,16 @@ const Home = () => {
     if (nfts && nfts.length > 0) {
       const creators = getTopCreators(nfts);
       const fItems = getFeatheredItems(nfts);
+      const topItems = getTopItems(nfts);
       setTopCreators(creators);
       setFeatheredItems(fItems);
+      setTopItems(topItems);
     }
   }, [nfts]);
 
   return (
     <>
-      <HeroSection />
+      <HeroSection topItems={topItems} />
       <FeaturedItem featheredItems={featheredItems} />
       <Title
         heading="শীর্ষ নির্মাতারা"

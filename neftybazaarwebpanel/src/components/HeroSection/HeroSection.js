@@ -11,7 +11,7 @@ import HeroSlider from "./HeroSlider/HeroSlider";
 import HeroCard from "./HeroCard/HeroCard";
 import { useRouter } from "next/navigation";
 
-const HeroSection = () => {
+const HeroSection = ({ topItems }) => {
   const router = useRouter();
   return (
     <div className={Style.heroSection}>
@@ -38,7 +38,7 @@ const HeroSection = () => {
       </div>
 
       {/* SLIIDER */}
-      <HeroSlider />
+      <HeroSlider topItems={topItems} />
       {/* 
       ANIMATION */}
       <>

@@ -1,6 +1,6 @@
 export const getFeatheredItems = (items) => {
   const shuffledItems = shuffle(items);
-  const featheredItems = shuffledItems.slice(0, 7);
+  const featheredItems = shuffledItems.slice(0, 10);
 
   return featheredItems;
 };

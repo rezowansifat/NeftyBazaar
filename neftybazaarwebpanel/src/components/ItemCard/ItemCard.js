@@ -39,8 +39,8 @@ const ItemCard = ({ cardData }) => {
           <div className={Style.card_info}>
             <div className={Style.card_name}>
               <span>
-                {cardData.name.substring(0, 20)}
-                {cardData.name.length > 16 ? "...." : ""}
+                {cardData.name.substring(0, 18)}
+                {cardData.name.length > 16 ? " ...." : ""}
               </span>
             </div>
             <div className={Style.item_info}>

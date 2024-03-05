@@ -5,14 +5,15 @@ import images from "../../../img/index";
 import { FaRegHeart } from "react-icons/fa";
 import { FaEthereum } from "react-icons/fa6";
 
-const HeroCard = () => {
+const HeroCard = ({ cardData }) => {
+  console.log(cardData.item.image);
   return (
     <div className={Style.hero_card}>
       {/* CARD MEDIA */}
       <div className={Style.card_media}>
         <Link href="#">
           <Image
-            src={images.hero_card_img}
+            src={cardData.item.image}
             alt="Card Image"
             width={330}
             height={340}
@@ -33,11 +34,11 @@ const HeroCard = () => {
       {/* CARD INFO */}
       <div className={Style.card_info}>
         <div className={Style.card_name}>
-          <Link href="/#">ডেকো সার্পেন্টাইন বেল্ট</Link>
+          <Link href="/#">{cardData.item.name}</Link>
         </div>
         <div className={Style.card_price}>
           <FaEthereum />
-          <p> 0,34</p>
+          <p> {cardData.item.price}</p>
         </div>
       </div>
     </div>
