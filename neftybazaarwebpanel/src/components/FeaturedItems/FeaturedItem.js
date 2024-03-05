@@ -14,8 +14,9 @@ import "swiper/css/pagination";
 
 // import required modules
 import { FreeMode } from "swiper/modules";
+import Loader from "../Loader/Loader";
 
-const FeaturedItem = () => {
+const FeaturedItem = ({ featheredItems }) => {
   return (
     <div className={Style.featured_item}>
       <div className={Style.featured_cont}>
@@ -27,45 +28,28 @@ const FeaturedItem = () => {
         </div>
 
         {/* END OF HEADER */}
-
-        <Swiper
-          freeMode={true}
-          grabCursor={true}
-          slidesPerView={"auto"}
-          spaceBetween={30}
-          centeredSlides={true}
-          loop={true}
-          modules={[FreeMode]}
-          className="featured_swiper"
-        >
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-          <SwiperSlide className="featured_swiper_slide">
-            <ItemCard />
-          </SwiperSlide>
-        </Swiper>
+        {featheredItems.length == 0 ? (
+          <Loader />
+        ) : (
+          <Swiper
+            freeMode={true}
+            grabCursor={true}
+            slidesPerView={"auto"}
+            spaceBetween={30}
+            centeredSlides={true}
+            loop={true}
+            modules={[FreeMode]}
+            className="featured_swiper"
+          >
+            {featheredItems.map((data, i) => (
+              <SwiperSlide className="featured_swiper_slide">
+                <Link href={{ pathname: "/details", query: data }} key={i}>
+                  <ItemCard cardData={data} />
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
     </div>
   );

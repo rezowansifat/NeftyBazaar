@@ -10,6 +10,7 @@ import Title from "@/components/Title/Title";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
 
 import authorStyle from "./author/author.module.css";
+import { getFeatheredItems } from "../../featheredItems/featheredItems";
 
 const Home = () => {
   const { fetchNFTs, checkIFWalletConnected, currentAccount } =
@@ -17,6 +18,7 @@ const Home = () => {
 
   const [nfts, setNfts] = useState([]);
   const [topCreators, setTopCreators] = useState([]);
+  const [featheredItems, setFeatheredItems] = useState([]);
 
   useEffect(() => {
     checkIFWalletConnected();
@@ -31,14 +33,16 @@ const Home = () => {
   useEffect(() => {
     if (nfts && nfts.length > 0) {
       const creators = getTopCreators(nfts);
+      const fItems = getFeatheredItems(nfts);
       setTopCreators(creators);
+      setFeatheredItems(fItems);
     }
   }, [nfts]);
 
   return (
     <>
       <HeroSection />
-      <FeaturedItem />
+      <FeaturedItem featheredItems={featheredItems} />
       <Title
         heading="শীর্ষ নির্মাতারা"
         paragraph="প্রোফাইল ব্রাউজ করুন, শীর্ষ নির্মাতাদের খুঁজুন"
