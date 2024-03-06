@@ -12,6 +12,7 @@ import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTa
 import authorStyle from "./author/author.module.css";
 import { getFeatheredItems } from "../../featheredItems/featheredItems";
 import { getTopItems } from "../../topItems/topItems";
+import HomeItem from "@/components/HomeItem/HomeItem";
 
 const Home = () => {
   const { fetchNFTs, checkIFWalletConnected, currentAccount } =
@@ -61,6 +62,12 @@ const Home = () => {
           ))}
         </div>
       )}
+
+      <HomeItem
+        featheredItems={featheredItems}
+        title="নিউ আইরভেল "
+        SubTitle="ব্রাউজ"
+      />
     </>
   );
 };
