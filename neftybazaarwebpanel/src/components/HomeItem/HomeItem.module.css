@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 60px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 .featured_cont {
   width: 80%;
@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .heading_section h2 {
   font-size: 32px;

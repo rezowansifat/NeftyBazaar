@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .heading_section h2 {
   font-size: 32px;

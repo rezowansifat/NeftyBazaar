@@ -8,11 +8,13 @@ import Loader from "@/components/Loader/Loader";
 import { getTopCreators } from "../../topCreators/topCreators";
 import Title from "@/components/Title/Title";
 import FollowerTabCard from "@/components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import images from "../img/index";
 
 import authorStyle from "./author/author.module.css";
 import { getFeatheredItems } from "../../featheredItems/featheredItems";
 import { getTopItems } from "../../topItems/topItems";
 import HomeItem from "@/components/HomeItem/HomeItem";
+import { Banner } from "@/components/Collection/collectionIndex";
 
 const Home = () => {
   const { fetchNFTs, checkIFWalletConnected, currentAccount } =
@@ -63,11 +65,10 @@ const Home = () => {
         </div>
       )}
 
-      <HomeItem
-        featheredItems={featheredItems}
-        title="নিউ আইরভেল "
-        SubTitle="ব্রাউজ"
-      />
+      <HomeItem featheredItems={featheredItems} title="জনপ্রিয় এনএফটি" />
+
+      <HomeItem featheredItems={featheredItems} title="নতুন গুলো আইটেম" />
+      <Banner bannerImage={images.creatorbackground2} />
     </>
   );
 };
