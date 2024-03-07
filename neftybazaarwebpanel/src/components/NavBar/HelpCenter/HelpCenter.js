@@ -7,23 +7,23 @@ import Style from "./HelpCenter.module.css";
 const HelpCenter = () => {
   const helpCenter = [
     {
-      name: "About",
+      name: "আমাদের সম্পর্কে",
       link: "about",
     },
     {
-      name: "Contact Us",
+      name: "যোগাযোগ করুন",
       link: "contact-us",
     },
     {
-      name: "Sign Up",
+      name: "নিবন্ধন করুন",
       link: "sign-up",
     },
     {
-      name: "Sign In",
+      name: "সাইন ইন",
       link: "sign-in",
     },
     {
-      name: "Subscription",
+      name: "সাবস্ক্রিপশন",
       link: "subscription",
     },
   ];

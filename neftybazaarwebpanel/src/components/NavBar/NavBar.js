@@ -72,54 +72,54 @@ const NavBar = () => {
 
   const helpCenter = [
     {
-      name: "About",
+      name: "আমাদের সম্পর্কে",
       link: "about",
     },
     {
-      name: "Contact Us",
+      name: "যোগাযোগ করুন",
       link: "contact-us",
     },
     {
-      name: "Sign Up",
+      name: "নিবন্ধন করুন",
       link: "sign-up",
     },
     {
-      name: "Sign In",
+      name: "সাইন ইন",
       link: "sign-in",
     },
     {
-      name: "Subscription",
+      name: "সাবস্ক্রিপশন",
       link: "subscription",
     },
   ];
 
   const discoverItems = [
     {
-      name: "Collection",
+      name: "সংগ্রহ",
       link: "collection",
     },
     {
-      name: "Search",
+      name: "অনুসন্ধান করুন",
       link: "search",
     },
     {
-      name: "Author Profile",
+      name: "অথর প্রোফাইল",
       link: "author-profile",
     },
     {
-      name: "NFT Details",
+      name: "এনএফটি বিবরণ",
       link: "NFT-details",
     },
     {
-      name: "Account Setting",
+      name: "একাউন্ট সেটিংস",
       link: "account-setting",
     },
     {
-      name: "Connect Wallet",
+      name: "কানেক্ট ওয়ালেট",
       link: "connect-wallet",
     },
     {
-      name: "Blog",
+      name: "ব্লগ",
       link: "blog",
     },
   ];

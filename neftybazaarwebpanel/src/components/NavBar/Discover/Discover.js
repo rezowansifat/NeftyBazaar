@@ -7,31 +7,31 @@ const Discover = () => {
   //--------DISCOVER NAVIGATION MENU
   const discover = [
     {
-      name: "Collection",
+      name: "সংগ্রহ",
       link: "collection",
     },
     {
-      name: "Search",
+      name: "অনুসন্ধান করুন",
       link: "search",
     },
     {
-      name: "Author Profile",
+      name: "অথর প্রোফাইল",
       link: "author-profile",
     },
     {
-      name: "NFT Details",
+      name: "এনএফটি বিবরণ",
       link: "NFT-details",
     },
     {
-      name: "Account Setting",
+      name: "একাউন্ট সেটিংস",
       link: "account-setting",
     },
     {
-      name: "Connect Wallet",
+      name: "কানেক্ট ওয়ালেট",
       link: "connect-wallet",
     },
     {
-      name: "Blog",
+      name: "ব্লগ",
       link: "blog",
     },
   ];

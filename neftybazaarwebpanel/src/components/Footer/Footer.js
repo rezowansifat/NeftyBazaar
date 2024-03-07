@@ -22,26 +22,26 @@ const Footer = () => {
             />
           </div>
           <p>
-            The world’s first and largest digital marketplace for crypto
-            collectibles and non-fungible tokens (NFTs). Buy, sell, and discover
-            exclusive digital items.
+            নন-ফাঞ্জিবল টোকেন (NFTs) এর জন্য বাংলাদেশ এর প্রথম এবং বৃহত্তম
+            ডিজিটাল মার্কেটপ্লেস। ডিজিটাল আইটেম কিনুন, বিক্রি করুন এবং ডিসকভার
+            করুন।
           </p>
         </div>
 
         <div className={Style.footer_box_discover}>
-          <h3>Discover</h3>
+          <h3>ডিসকভার</h3>
           <Discover />
         </div>
 
         <div className={Style.footer_box_help}>
-          <h3>Help Center</h3>
+          <h3>হেল্প সেন্টার</h3>
           <HelpCenter />
         </div>
 
         <div className={Style.subscribe}>
-          <h3>Subscribe</h3>
+          <h3>সাবস্ক্রাইব</h3>
           <div className={Style.subscribe_box}>
-            <input type="email" placeholder="Enter your email *" />
+            <input type="email" placeholder="ইমেইল এড্রেস দিন *" />
             <RiSendPlaneFill className={Style.subscribe_box_send} />
           </div>
         </div>
