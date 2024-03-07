@@ -20,9 +20,9 @@ const Banner = ({ bannerImage }) => {
   return (
     <div className={Style.banner}>
       <div className={Style.banner_cont}>
-        <h2>Discover, create and sell your own NFT</h2>
+        <h2>ডিসকভার করুন, নিজ্বস্য এনএফটি তৈরি ও বিক্রয় করুন</h2>
         <Button
-          btnName="Create your first NFT"
+          btnName="প্রথম এনএফটি তৈরী করুন "
           icon={<CiLocationArrow1 />}
           handleClick={() => {}}
         />
