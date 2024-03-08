@@ -35,27 +35,27 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
   const categoryArry = [
     {
       image: images.nft_image_1,
-      category: "Sports",
+      category: "স্পোর্টস",
     },
     {
       image: images.nft_image_2,
-      category: "Arts",
+      category: "আর্টস",
     },
     {
       image: images.nft_image_3,
-      category: "Music",
+      category: "মিউজিক",
     },
     {
       image: images.nft_image_1,
-      category: "Digital",
+      category: "ডিজিটাল",
     },
     {
       image: images.nft_image_2,
-      category: "Time",
+      category: "টাইম",
     },
     {
       image: images.nft_image_3,
-      category: "Photography",
+      category: "ফোটোগ্রাফি",
     },
   ];
 
@@ -157,7 +157,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
                     <TiTick />
                   </div>
                 </div>
-                <p>Crypto Legend - {el.category} </p>
+                <p>{el.category} </p>
               </div>
             ))}
           </div>
@@ -220,7 +220,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
 
         <div className={Style.upload_box_btn}>
           <Button
-            btnName="Upload"
+            btnName="আপলোড"
             icon={<CiLocationArrow1 />}
             handleClick={async () =>
               createNFT(
@@ -238,7 +238,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
             }
           />
           <Button
-            btnName="Preview"
+            btnName="প্রিভিউ"
             icon={<CiLocationArrow1 />}
             handleClick={() => {}}
           />
