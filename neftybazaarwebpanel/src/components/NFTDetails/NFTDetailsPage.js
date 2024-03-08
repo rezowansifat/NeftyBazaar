@@ -3,7 +3,6 @@ import { NFTDescription, NFTDetailsImg, NFTTabs } from "./NFTDetailsIndex";
 import Style from "./NFTDetailsPage.module.css";
 
 const NFTDetailsPage = ({ nft }) => {
-  console.log("Seeler" + nft.seller);
   return (
     <div className={Style.NFTDetailsPage}>
       <div className={Style.NFTDetailsPage_box}>

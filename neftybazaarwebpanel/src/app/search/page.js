@@ -3,21 +3,23 @@ import { useContext, useEffect, useState } from "react";
 
 //INTRNAL IMPORT
 import Style from "./searchPage.module.css";
-
-// import { NFTCardTwo, Banner } from "../../components/Collection";
 import images from "../../img/index";
-import FeaturedItem from "@/components/FeaturedItems/FeaturedItem";
-import { Brand, Filter } from "@/components/componentsindex";
+import { Filter } from "@/components/componentsindex";
 import { SearchBar } from "@/components/Search/searchBarIndex";
 import { Banner } from "@/components/Collection/collectionIndex";
+import { useRouter, useSearchParams } from "next/navigation";
 
 //CONTEXT
 import NeftyBazaarContext from "../../../Context/NeftyBazaarContext";
 import NFTCards from "@/components/Collection/NFTCards/NFTCards";
-import { getTopItems } from "../../../topItems/topItems";
-import { getFeatheredItems } from "../../../featheredItems/featheredItems";
 
 const page = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const query = searchParams.get("query");
+
+  console.log(query);
+
   const { fetchNFTs } = useContext(NeftyBazaarContext);
 
   const [nfts, setNfts] = useState([]);
@@ -27,8 +29,6 @@ const page = () => {
     fetchNFTs().then((items) => {
       setNfts(items.reverse());
       setNftsCopy(items);
-      //console.log(getTopItems(items));
-      console.log(getFeatheredItems(items));
     });
   }, []);
 
@@ -53,10 +53,13 @@ const page = () => {
   return (
     <div className={Style.searchPage}>
       <Banner bannerImage={images.creatorbackground2} />
-      <SearchBar onHandleSerch={onHandleSerch} onClearSearch={onClearSearch} />
+      <SearchBar
+        query={query}
+        onHandleSerch={onHandleSerch}
+        onClearSearch={onClearSearch}
+      />
       <Filter />
       <NFTCards NFTData={nfts} />
-      <FeaturedItem />
     </div>
   );
 };

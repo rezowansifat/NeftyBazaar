@@ -61,11 +61,11 @@ const Filter = () => {
     <div className={Style.filter}>
       <div className={Style.filter_box}>
         <div className={Style.filter_box_left}>
-          <button onClick={() => {}}>NFTs</button>
-          <button onClick={() => {}}>Arts</button>
-          <button onClick={() => {}}>Musics</button>
-          <button onClick={() => {}}>Sports</button>
-          <button onClick={() => {}}>Photography</button>
+          <button onClick={() => {}}>ডিজিটাল</button>
+          <button onClick={() => {}}>আর্টস</button>
+          <button onClick={() => {}}>মিউজিক</button>
+          <button onClick={() => {}}>স্পোর্টস</button>
+          <button onClick={() => {}}>ফোটোগ্রাফি</button>
         </div>
 
         <div className={Style.filter_box_right}>
@@ -74,7 +74,7 @@ const Filter = () => {
             onClick={() => openFilter()}
           >
             <FaFilter />
-            <span>Filter</span> {filter ? <FaAngleDown /> : <FaAngleUp />}
+            <span>ফিল্টার</span> {filter ? <FaAngleDown /> : <FaAngleUp />}
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@ const Filter = () => {
         <div className={Style.filter_box_items}>
           <div className={Style.filter_box_items_box}>
             <div className={Style.filter_box_items_box_item}>
-              <FaWallet /> <span>10 ETH</span>
+              <FaWallet /> <span>১০ ইথার </span>
               <AiFillCloseCircle />
             </div>
           </div>
@@ -93,7 +93,7 @@ const Filter = () => {
               className={Style.filter_box_items_box_item_trans}
               onClick={() => openImage()}
             >
-              <FaImages /> <small>Images</small>
+              <FaImages /> <small>ইমেজেস</small>
               {image ? <AiFillCloseCircle /> : <TiTick />}
             </div>
           </div>
@@ -103,7 +103,7 @@ const Filter = () => {
               className={Style.filter_box_items_box_item_trans}
               onClick={() => openVideo()}
             >
-              <FaVideo /> <small>Videos</small>
+              <FaVideo /> <small>ভিডিওস</small>
               {video ? <AiFillCloseCircle /> : <TiTick />}
             </div>
           </div>
@@ -113,14 +113,14 @@ const Filter = () => {
               className={Style.filter_box_items_box_item_trans}
               onClick={() => openMusic()}
             >
-              <FaMusic /> <small>Musics</small>
+              <FaMusic /> <small>মিউজিক</small>
               {music ? <AiFillCloseCircle /> : <TiTick />}
             </div>
           </div>
 
           <div className={Style.filter_box_items_box}>
             <div className={Style.filter_box_items_box_item}>
-              <FaUserAlt /> <span>Verified</span>
+              <FaUserAlt /> <span>ভেরিফাইড</span>
               <MdVerified />
             </div>
           </div>

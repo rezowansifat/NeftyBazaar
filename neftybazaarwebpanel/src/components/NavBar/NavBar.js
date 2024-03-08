@@ -31,6 +31,7 @@ const NavBar = () => {
   const [profile, setProfile] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [sideBar, setSideBar] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleSideBar = () => {
     setSideBar((prevState) => !prevState);
@@ -52,6 +53,14 @@ const NavBar = () => {
     } else {
       setProfile(false);
     }
+  };
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const navigateToSearchPage = () => {
+    router.push(`/search?query=${encodeURIComponent(searchQuery)}`);
   };
 
   useEffect(() => {
@@ -144,8 +153,16 @@ const NavBar = () => {
           {/* SEARCH */}
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
-              <input type="text" placeholder="এনফটি খুজুন" />
-              <BsSearch onClick={() => {}} className={Style.search_icon} />
+              <input
+                type="text"
+                placeholder="এনফটি খুজুন"
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+              <BsSearch
+                onClick={navigateToSearchPage}
+                className={Style.search_icon}
+              />
             </div>
           </div>
         </div>

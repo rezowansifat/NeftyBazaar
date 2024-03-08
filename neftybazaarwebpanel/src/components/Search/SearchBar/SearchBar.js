@@ -4,37 +4,48 @@ import { BsSearch, BsArrowRight } from "react-icons/bs";
 //INTERNAL IMPORT
 import Style from "./SearchBar.module.css";
 import { useEffect, useState } from "react";
-const SearchBar = ({ onHandleSerch, onClearSearch }) => {
+import { RxCross1 } from "react-icons/rx";
+
+const SearchBar = ({ onHandleSerch, onClearSearch, query }) => {
   const [search, setSearch] = useState();
-  const [searchItem, setSearchItem] = useState(search);
+  const [searchItem, setSearchItem] = useState(query || "");
+
+  useEffect(() => {
+    setSearchItem(query || "");
+  }, [query]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setSearch(searchItem);
+      onHandleSerch(searchItem);
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [searchItem]);
+  }, [searchItem, onHandleSerch]);
 
-  useEffect(() => {
-    if (search) {
-      onHandleSerch(search);
-    } else {
-      onClearSearch();
-    }
-  }, [search]);
+  const handleInputChange = (e) => {
+    setSearchItem(e.target.value);
+  };
 
+  const handleClearSearch = () => {
+    setSearchItem("");
+    onClearSearch();
+  };
   return (
     <div className={Style.SearchBar}>
       <div className={Style.SearchBar_box}>
         <BsSearch className={Style.SearchBar_box_icon} />
         <input
           type="text"
-          placeholder="Type yout keyword..."
-          onChange={(e) => setSearchItem(e.target.value)}
+          placeholder="কীওয়ার্ড টাইপ করুন..."
+          onChange={handleInputChange}
           value={searchItem}
         />
-        <BsArrowRight className={Style.SearchBar_box_icon} />
+        {searchItem != "" ? (
+          <RxCross1
+            className={Style.SearchBar_box_icon}
+            onClick={handleClearSearch}
+          />
+        ) : null}
       </div>
     </div>
   );
